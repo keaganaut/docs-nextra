@@ -1,0 +1,21 @@
+{
+    "index": {
+        "title": "Home",
+        "type": "page",
+        "display": "hidden"
+    },
+    "docs": {
+        "title": "Docs",
+        "type": "page"
+    },
+    "apiReference": {
+        "title": "API Reference",
+        "type": "page"
+    },
+    "login": {
+        "title": "Login ↗",
+        "type": "page",
+        "href": "https://www.google.com",
+        "newWindow": true
+    }
+}

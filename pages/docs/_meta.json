@@ -1,0 +1,15 @@
+{
+    "getStarted": "Get Started",
+    "coreConcepts": "Core Concepts",
+    "-": {
+        "type": "separator"
+    },
+    "ingest": "Ingest",
+    "transform": "Transform",
+    "visualize": "Visualize",
+    "export": "Export",
+    "orchestrate": "Orchestrate",
+    "--": {
+        "type": "separator"
+    }
+}
