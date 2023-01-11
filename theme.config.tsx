@@ -1,4 +1,5 @@
 import { DocsThemeConfig } from "nextra-theme-docs";
+import React from "react";
 import IntegrationIcon from "./components/icons/IntegrationIcon";
 import ModelIcon from "./components/icons/ModelIcon";
 
@@ -32,9 +33,10 @@ const config: DocsThemeConfig = {
   project: {
     link: "https://github.com/keaganaut/nextra-mvp",
   },
+
+  // tempfix for this zod issue: https://github.com/shuding/nextra/issues/1210
   toc: {
-    extraContent: <img src="#" alt="" />,
-    float: true,
+    extraContent: <React.Fragment />,
   },
   docsRepositoryBase: "https://github.com/keaganaut/nextra-mvp",
   footer: {
