@@ -46,22 +46,22 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 2,
     titleComponent({ title, type }) {
-      if (title === "Ingest") {
-        return (
-          <>
-            <IntegrationIcon /> {title}
-          </>
-        );
-      }
+      // if (title === "Ingest") {
+      //   return (
+      //     <>
+      //       <IntegrationIcon /> {title}
+      //     </>
+      //   );
+      // }
 
-      if (title === "Transform") {
-        return (
-          <>
-            <ModelIcon />
-            {title}
-          </>
-        );
-      }
+      // if (title === "Transform") {
+      //   return (
+      //     <>
+      //       <ModelIcon />
+      //       {title}
+      //     </>
+      //   );
+      // }
       return <>{title}</>;
     },
   },

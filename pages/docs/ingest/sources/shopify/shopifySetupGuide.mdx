@@ -1,0 +1,31 @@
+# Shopify Setup Guide
+
+## Authenticate
+### Prerequisites
+To connect your Shopify account to Y42, you need:
+- Access to a Shopify account
+- [Authenticated access scopes](https://shopify.dev/api/usage/access-scopes) for Shopify's Admin API
+
+### **Option A:**  Authenticate using `API PASSWORD`
+
+1. Go to `https://YOURSTORE.myshopify.com/admin/apps/private`
+2. Enable private development if it isn't enabled
+3. Create a private application
+4. Select the resources you want to allow access to. Y42 only needs read-level access
+   * Note: The UI will show all possible data sources and will show errors when syncing if it doesn't have permissions to access a resource
+5. The password under the `Admin API` section is what you'll use as the `api_password` for the integration
+
+### **Option B:**  Authenticate using `OAuth 2.0`
+
+1. Select `OAuth 2.0` in `Shopify Authorization Method`
+2. Click on `authenticate`
+2. Proceed the authentication using your credentials for your Shopify account
+
+
+## Configure
+
+### Substep
+Copy
+
+### Substep
+Copy
