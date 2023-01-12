@@ -4,6 +4,18 @@
         "type": "page",
         "display": "hidden"
     },
+    "Ingest": {
+        "title": "Ingest",
+        "type": "page"
+    },
+    "Transform": {
+        "title": "Transform",
+        "type": "page"
+    },
+    "Publish": {
+        "title": "Publish",
+        "type": "page"
+    },
     "docs": {
         "title": "Docs",
         "type": "page"

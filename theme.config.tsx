@@ -1,7 +1,5 @@
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { DocsThemeConfig, Navbar } from "nextra-theme-docs";
 import React from "react";
-import IntegrationIcon from "./components/icons/IntegrationIcon";
-import ModelIcon from "./components/icons/ModelIcon";
 
 const Logo = ({ height, width }) => {
   return (
@@ -68,6 +66,9 @@ const config: DocsThemeConfig = {
   darkMode: true,
   nextThemes: {
     defaultTheme: "dark",
+  },
+  navbar: {
+    component: Navbar,
   },
 
   i18n: [],
