@@ -1,24 +1,6 @@
 {
     "index": {
-        "title": "Home",
-        "type": "page",
-        "display": "hidden"
-    },
-    "Ingest": {
-        "title": "Ingest",
-        "type": "page"
-    },
-    "Transform": {
-        "title": "Transform",
-        "type": "page"
-    },
-    "Publish": {
-        "title": "Publish",
-        "type": "page"
-    },
-    "docs": {
-        "title": "Docs",
-        "type": "page"
+        "title": "Home"
     },
     "apiReference": {
         "title": "API Reference",
@@ -29,5 +11,29 @@
         "type": "page",
         "href": "https://www.google.com",
         "newWindow": true
+    },
+    "-- Get started --": {
+        "type": "separator",
+        "title": "Get started"
+    },
+    "quickStart": "Quick start",
+    "coreConcepts": "Core concepts",
+    "-- Integrate --": {
+        "type": "separator",
+        "title": "Integrate"
+    },
+    "importModes": "Import modes",
+    "sources": "Sources",
+    "-- Transform --": {
+        "title": "Transform",
+        "type": "separator"
+    },
+    "-- Visualize --": {
+        "type": "separator",
+        "title": "Visualize"
+    },
+    "-- Orchestrate --": {
+        "type": "separator",
+        "title": "Orchestrate"
     }
 }
