@@ -3,8 +3,10 @@
         "title": "Home"
     },
     "apiReference": {
-        "title": "API Reference",
-        "type": "page"
+        "title": "API Reference ↗",
+        "type": "page",
+        "href": "https://www.google.com",
+        "newWindow": true
     },
     "login": {
         "title": "Login ↗",
