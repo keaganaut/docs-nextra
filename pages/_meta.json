@@ -5,13 +5,13 @@
     "apiReference": {
         "title": "API Reference ↗",
         "type": "page",
-        "href": "https://www.google.com",
+        "href": "https://redocly.com/",
         "newWindow": true
     },
     "login": {
         "title": "Login ↗",
         "type": "page",
-        "href": "https://www.google.com",
+        "href": "https://app.prod.y42.dev",
         "newWindow": true
     },
     "-- Get started --": {
@@ -20,22 +20,23 @@
     },
     "quickStart": "Quick start",
     "coreConcepts": "Core concepts",
-    "-- Integrate --": {
+    "-- Manage pipelines --": {
         "type": "separator",
-        "title": "Integrate"
+        "title": "Manage pipelines"
     },
-    "importModes": "Import modes",
     "sources": "Sources",
-    "-- Transform --": {
-        "title": "Transform",
-        "type": "separator"
-    },
-    "-- Visualize --": {
+    "models": "Models",
+    "dataTests": "Data tests",
+    "orchestrations": "Orchestrations",
+    "-- Monitor pipelines --": {
         "type": "separator",
-        "title": "Visualize"
+        "title": "Monitor pipelines"
     },
-    "-- Orchestrate --": {
+    "Alerts": "Alerts",
+    "-- Consume tables --": {
         "type": "separator",
-        "title": "Orchestrate"
-    }
+        "title": "Consume tables"
+    },
+    "visualizations": "Visualizations",
+    "dataExports": "Data exports"
 }

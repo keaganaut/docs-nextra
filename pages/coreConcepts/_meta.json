@@ -1,5 +1,7 @@
 {
     "dataAssets": "Data Assets",
     "jobs": "Jobs",
-    "git": "Git"
+    "tableLifecycle": "Table lifecycle",
+    "accessControl": "Access control",
+    "versionControl": "Version control"
 }

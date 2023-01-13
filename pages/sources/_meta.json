@@ -1,4 +1,4 @@
 {
-    "postgresql": "PostgreSQL",
-    "shopify": "Shopify"
+    "importModes": "Import modes",
+    "connectors": "Connectors"
 }
