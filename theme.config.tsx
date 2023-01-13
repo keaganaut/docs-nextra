@@ -29,14 +29,14 @@ const Logo = ({ height, width }) => {
 const config: DocsThemeConfig = {
   logo: <Logo height={64} width={96} />,
   project: {
-    link: "https://github.com/keaganaut/nextra-mvp",
+    link: "https://github.com/keaganaut/docs-nextra",
   },
 
   // tempfix for this zod issue: https://github.com/shuding/nextra/issues/1210
   toc: {
     extraContent: <React.Fragment />,
   },
-  docsRepositoryBase: "https://github.com/keaganaut/nextra-mvp",
+  docsRepositoryBase: "https://github.com/keaganaut/docs-nextra",
   footer: {
     text: "Docs MVP using Nextra",
   },
