@@ -28,15 +28,15 @@
     "models": "Models",
     "dataTests": "Data tests",
     "orchestrations": "Orchestrations",
-    "-- Monitor pipelines --": {
-        "type": "separator",
-        "title": "Monitor pipelines"
-    },
-    "Alerts": "Alerts",
     "-- Consume tables --": {
         "type": "separator",
         "title": "Consume tables"
     },
     "visualizations": "Visualizations",
-    "dataExports": "Data exports"
+    "dataExports": "Data exports",
+    "-- Monitor pipelines --": {
+        "type": "separator",
+        "title": "Monitor pipelines"
+    },
+    "Alerts": "Alerts"
 }
