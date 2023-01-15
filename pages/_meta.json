@@ -32,12 +32,12 @@
     "sources": "Sources",
     "models": "Models",
     "dataTests": "Data tests",
-    "orchestrations": "Orchestrations",
+    "orchestration": "Orchestration",
     "-- Consume tables --": {
         "type": "separator",
         "title": "Consume tables"
     },
-    "visualizations": "Visualizations",
+    "visualization": "Visualization",
     "dataExports": "Data exports",
     "-- Monitor pipelines --": {
         "type": "separator",
