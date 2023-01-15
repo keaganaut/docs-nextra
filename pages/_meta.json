@@ -18,7 +18,12 @@
         "type": "separator",
         "title": "Get started"
     },
-    "quickStart": "Quick start",
+    "quickStart": {
+        "title": "Quick start",
+        "theme": {
+            "collapsed": 0
+        }
+    },
     "coreConcepts": "Core concepts",
     "-- Manage pipelines --": {
         "type": "separator",
@@ -38,5 +43,5 @@
         "type": "separator",
         "title": "Monitor pipelines"
     },
-    "Alerts": "Alerts"
+    "alerts": "Alerts"
 }

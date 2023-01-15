@@ -1,5 +1,4 @@
 import { DocsThemeConfig, Navbar } from "nextra-theme-docs";
-import React from "react";
 
 const Logo = ({ height, width }) => {
   return (
@@ -32,17 +31,13 @@ const config: DocsThemeConfig = {
     link: "https://github.com/keaganaut/docs-nextra",
   },
 
-  // tempfix for this zod issue: https://github.com/shuding/nextra/issues/1210
-  toc: {
-    extraContent: <React.Fragment />,
-  },
   docsRepositoryBase: "https://github.com/keaganaut/docs-nextra",
   footer: {
     text: "Docs MVP using Nextra",
   },
   primaryHue: 269,
   sidebar: {
-    defaultMenuCollapseLevel: 2,
+    defaultMenuCollapseLevel: 1,
     titleComponent({ title, type }) {
       // if (title === "Ingest") {
       //   return (
