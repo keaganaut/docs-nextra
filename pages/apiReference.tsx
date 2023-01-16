@@ -20,8 +20,10 @@ export default function ApiReference(props) {
             theme: {
               colors: {
                 primary: { main: "#6E26EC" },
-                http: {},
-                responses: {},
+                http: { get: "#1F8253", post: "#0C79B1", patch: "#AD5D2A" },
+                responses: {
+                  error: {},
+                },
                 text: {
                   primary: "#d1d1d1",
                   secondary: "#ffffff52",
@@ -38,7 +40,9 @@ export default function ApiReference(props) {
                 typeTitleColor: "#ffffff52",
                 requireLabelColor: "#E35755",
               },
-              typography: { code: { color: "#ffff10" } },
+              typography: {
+                code: { backgroundColor: "#1E2025", color: "#CC6C32" },
+              },
             },
           }}
         />
