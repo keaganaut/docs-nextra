@@ -3,10 +3,8 @@
         "title": "Home"
     },
     "api-reference": {
-        "title": "API Reference ↗",
-        "type": "page",
-        "href": "https://redocly.com/",
-        "newWindow": true
+        "title": "API Reference",
+        "type": "page"
     },
     "login": {
         "title": "Login ↗",
