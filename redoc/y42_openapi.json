@@ -1,0 +1,2684 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Y42 Public API",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/gateway/companies/{company_id}/orchestration/runs": {
+            "get": {
+                "tags": [
+                    "Orchestration runs"
+                ],
+                "summary": "Get orchestrations runs",
+                "operationId": "gateway_companies__company_id__orchestration_runs_get",
+                "responses": {},
+                "description": "\nSet x-storage-location header to fetch orchestration file(s):\n\n1) a comma separated list:\n'src/Orchestrations/alpha/*,src/Orchestrations/beta/*'\n\n2) string:\n'src/Orchestrations/alpha/*'\n\n3) string, encode url if it's needed (urlencode):\n'src%2FOrchestrations%2Fmy%2C%20folder%2F%2A,src%2FOrchestrations%2Fmy%2C%20folder2%2F%2A'\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/2/orchestrations/docs#/default/get_api_2_orchestrations_company__company_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "default": 0,
+                            "title": "Limit",
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "default": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "default": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "default": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-location",
+                        "schema": {
+                            "default": "src/Orchestrations/test-pipline/*",
+                            "title": "X Storage Location",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Orchestration runs"
+                ],
+                "summary": "Trigger orchestration run",
+                "operationId": "gateway_companies__company_id__orchestration_runs_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "RequestV2",
+                                "type": "object",
+                                "properties": {
+                                    "location": {
+                                        "title": "Location",
+                                        "type": "string",
+                                        "default": "src/Orchestrations/test-pipline"
+                                    }
+                                },
+                                "description": "Request body."
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "OrchestrationResponse",
+                                    "required": [
+                                        "run_id",
+                                        "status"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "run_id": {
+                                            "title": "Run Id",
+                                            "type": "string"
+                                        },
+                                        "status": {
+                                            "$ref": "#/components/schemas/BagRunStatus"
+                                        }
+                                    },
+                                    "description": "Orchestration response."
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/2/orchestrations/docs#/default/post_api_2_orchestrations_company__company_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "default": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "default": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "default": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/orchestration/runs/{run_id}": {
+            "get": {
+                "tags": [
+                    "Orchestration runs"
+                ],
+                "summary": "Get one orchestration run",
+                "operationId": "gateway_companies__company_id__orchestration_runs__run_id__get",
+                "responses": {},
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/2/orchestrations/docs#/default/get_api_2_orchestrations_company__company_id___run_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "default": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "default": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "default": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-location",
+                        "schema": {
+                            "default": "src/Orchestrations/test-pipline",
+                            "title": "X Storage Location",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "run_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/jobs/trigger": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "Trigger model or integration job",
+                "operationId": "gateway_companies__company_id__jobs_trigger_post",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ResourceRequestResponse"
+                        }
+                    },
+                    "422": {
+                        "description": "validation error"
+                    },
+                    "500": {
+                        "description": "internal error"
+                    }
+                },
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/v2/trigger/apidocs/#/task/post_company__company_id__task\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "type of storage - for now always 'githubapp'",
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "required": true,
+                        "schema": {
+                            "example": "githubapp",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "identifier of the storage/space id",
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "required": true,
+                        "schema": {
+                            "example": "07b0add8-7f77-11ec-99c4-fbd82bafdeb1",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "for git repos, branch of the storage",
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "required": true,
+                        "schema": {
+                            "example": "kind-of-working",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "company id",
+                        "in": "path",
+                        "name": "company_id",
+                        "schema": {
+                            "example": "2",
+                            "required": true,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/TaskRequestSchema"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/jobs/latest": {
+            "get": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "Get last valid job for model or integration",
+                "operationId": "gateway_companies__company_id__jobs_latest_get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "GetLatestJobResponse",
+                                    "required": [
+                                        "jobs"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "jobs": {
+                                            "title": "Jobs",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/JobDetailsResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Retrieves the latest job for each asset (path) matching the storage parameters. Can either load just the latest\nfor each asset, or only jobs in state ready, depending on the query parameter `valid_only`. If the query parameter\n`include_parents` is set to true, the parent jobs of the requested jobs will be returned as a nested property\nof their child jobs if available.\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/job-info-service/docs#/Jobs/get_api_1_job_info_service_company__company_id__latest_jobs\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, only jobs in state 'ready' are loaded.",
+                        "in": "query",
+                        "name": "valid_only",
+                        "schema": {
+                            "default": false,
+                            "title": "Valid Only",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "If true, the initial imports for all requested incremental jobs will be returned \u2013 even if they do not meet the other query conditions.",
+                        "in": "query",
+                        "name": "include_parents",
+                        "schema": {
+                            "default": false,
+                            "title": "Include Parents",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "example": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "example": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "example": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-commit",
+                        "schema": {
+                            "example": "e9df6a6f056c7a1527e51be0759a8c90aa0decba",
+                            "title": "X Storage Commit",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Comma separated list of paths, either exact, or with a wildcard at the end of the path.",
+                        "in": "header",
+                        "name": "x-storage-location",
+                        "schema": {
+                            "example": [
+                                "src/Models/mysql/*",
+                                "src/Integrations/*"
+                            ],
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "title": "X Storage Location",
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/jobs": {
+            "get": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "Get full job history for model or integration",
+                "operationId": "gateway_companies__company_id__jobs_get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "GetJobsResponse",
+                                    "required": [
+                                        "jobs"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "cursor": {
+                                            "title": "Cursor",
+                                            "type": "string",
+                                            "description": "If more jobs than the limit are available, the cursor can be used to request the next page of data."
+                                        },
+                                        "jobs": {
+                                            "title": "Jobs",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/JobDetailsResponse"
+                                            },
+                                            "description": "A list of jobs that satisfied the query."
+                                        },
+                                        "parent_jobs": {
+                                            "title": "Parent Jobs",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/JobDetailsResponse"
+                                            },
+                                            "description": "The parent jobs for the jobs that satisfied the query. The parent jobs can overlap with the jobs if  there are parent jobs that meet the query criteria and they do not need to satisfy the query themselves  as long as the job is a parent job of a job that satisfies the query. Only provided if `include_parents` is set to true."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Retrieves all jobs for all assets (paths) matching the storage parameters, ordered by their `created_at` time. If\nthe query parameter `include_parents` is set, the array of jobs returned will be extended to include the parent jobs\n of the jobs requested where available.\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/job-info-service/docs#/Jobs/get_api_1_job_info_service_company__company_id__jobs\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Optional parameter to be used for paging.",
+                        "in": "query",
+                        "name": "cursor",
+                        "schema": {
+                            "title": "Cursor",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "default": 200,
+                            "exclusiveMinimum": 0,
+                            "maximum": 200,
+                            "title": "Limit",
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "description": "Optional parameter to define the inclusive lower bound of a date range for the job's creation date as an ISO formatted UTC timestamp.",
+                        "in": "query",
+                        "name": "after",
+                        "schema": {
+                            "example": "2022-07-28T18:28:07.568425",
+                            "format": "date-time",
+                            "title": "After",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Optional parameter to define the exclusive upper bound of a date range for the job's creation date as an ISO formatted UTC timestamp.",
+                        "in": "query",
+                        "name": "before",
+                        "schema": {
+                            "example": "2022-07-28T18:28:07.568425",
+                            "format": "date-time",
+                            "title": "Before",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, the initial imports for all requested incremental jobs will be returned \u2013 even if they do not meet the other query conditions.",
+                        "in": "query",
+                        "name": "include_parents",
+                        "schema": {
+                            "default": false,
+                            "title": "Include Parents",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "example": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "example": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "example": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-commit",
+                        "schema": {
+                            "example": "e9df6a6f056c7a1527e51be0759a8c90aa0decba",
+                            "title": "X Storage Commit",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Comma separated list of paths, either exact, or with a wildcard at the end of the path.",
+                        "in": "header",
+                        "name": "x-storage-location",
+                        "schema": {
+                            "example": [
+                                "src/Models/mysql/*",
+                                "src/Integrations/*"
+                            ],
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "title": "X Storage Location",
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/jobs/{job_id}": {
+            "get": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "Get one job",
+                "operationId": "gateway_companies__company_id__jobs__job_id__get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JobDetailsResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Retrieves single job. The job will only be returned if the specified space_id and company_id are matching the\nrequested job_id, ignoring path and branch. If the query parameter `include_parent` is set, the returned job will\ncontain its parent job as a property.\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/job-info-service/docs#/Jobs/get_api_1_job_info_service_company__company_id__job__job_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true and if the requested job was an incremental job, the initial import will be added as a property of the job returned.",
+                        "in": "query",
+                        "name": "include_parent",
+                        "schema": {
+                            "default": false,
+                            "title": "Include Parent",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-type",
+                        "schema": {
+                            "example": "githubapp",
+                            "title": "X Storage Type",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-id",
+                        "schema": {
+                            "example": "1475cb08-028e-49db-b8e9-5171eb6b87af",
+                            "title": "X Storage Id",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-branch",
+                        "schema": {
+                            "example": "main",
+                            "title": "X Storage Branch",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-storage-commit",
+                        "schema": {
+                            "example": "e9df6a6f056c7a1527e51be0759a8c90aa0decba",
+                            "title": "X Storage Commit",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Comma separated list of paths, either exact, or with a wildcard at the end of the path.",
+                        "in": "header",
+                        "name": "x-storage-location",
+                        "schema": {
+                            "example": [
+                                "src/Models/mysql/*",
+                                "src/Integrations/*"
+                            ],
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1,
+                            "title": "X Storage Location",
+                            "type": "array"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "job_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/": {
+            "get": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "List spaces",
+                "operationId": "gateway_companies__company_id__spaces__get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "GetSpacesResponse",
+                                    "required": [
+                                        "spaces"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "spaces": {
+                                            "title": "Spaces",
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Space"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/space/get_api_1_github_backend_company__company_id__\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/new": {
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Create Space",
+                "operationId": "gateway_companies__company_id__spaces_new_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "CreateSpaceRequest",
+                                "required": [
+                                    "space_name"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "space_name": {
+                                        "title": "Space Name",
+                                        "type": "string",
+                                        "example": "My Space"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "CreateGitLabSpaceResponse",
+                                    "required": [
+                                        "space_id"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "space_id": {
+                                            "title": "Space Id",
+                                            "type": "string",
+                                            "example": "0606688b-6823-88fe-82fa-04cd54577ef0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/space/post_api_1_github_backend_company__company_id__gitlab_setup_space\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}": {
+            "get": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Get space details",
+                "operationId": "gateway_companies__company_id__spaces__space_id__get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "GetSpaceResponse",
+                                    "required": [
+                                        "space_details"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "space_details": {
+                                            "$ref": "#/components/schemas/Space"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/space/get_api_1_github_backend_company__company_id___space_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Update Space",
+                "operationId": "gateway_companies__company_id__spaces__space_id__patch",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "EmptyResponse",
+                                    "type": "string",
+                                    "default": ""
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "- rename the space\n- set it as default\n- set job retention time\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/space/patch_api_1_github_backend_company__company_id___space_id_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, a space will be marked as default",
+                        "in": "query",
+                        "name": "is_default",
+                        "schema": {
+                            "title": "Is Default",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "description": "New space name",
+                        "in": "query",
+                        "name": "name",
+                        "schema": {
+                            "default": "",
+                            "title": "Name",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "How long to keep jobs around before they get deleted",
+                        "in": "query",
+                        "name": "job_retention_time_minutes",
+                        "schema": {
+                            "exclusiveMinimum": 0,
+                            "title": "Job Retention Time Minutes",
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}/setup/bigquery": {
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Setup BigQuery in Space",
+                "operationId": "gateway_companies__company_id__spaces__space_id__setup_bigquery_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "BigQuerySecret",
+                                "required": [
+                                    "location",
+                                    "secret"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "bucket_name": {
+                                        "title": "Bucket Name",
+                                        "type": "string",
+                                        "default": "",
+                                        "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                    },
+                                    "dataset_name": {
+                                        "title": "Dataset Name",
+                                        "type": "string",
+                                        "default": "",
+                                        "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                    },
+                                    "location": {
+                                        "title": "Location",
+                                        "type": "string"
+                                    },
+                                    "secret": {
+                                        "$ref": "#/components/schemas/GoogleSecret"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "DwhResponse",
+                                    "required": [
+                                        "database_name",
+                                        "bucket_name",
+                                        "bucket_type",
+                                        "database_type",
+                                        "secret_id"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "bucket_name": {
+                                            "title": "Bucket Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "bucket_type": {
+                                            "$ref": "#/components/schemas/BucketType"
+                                        },
+                                        "database_name": {
+                                            "title": "Database Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "database_type": {
+                                            "$ref": "#/components/schemas/DatabaseType"
+                                        },
+                                        "public_schema_name": {
+                                            "title": "Public Schema Name",
+                                            "type": "string",
+                                            "default": "",
+                                            "example": "companyname_public_spacename_main"
+                                        },
+                                        "secret_id": {
+                                            "title": "Secret Id",
+                                            "type": "string",
+                                            "example": "0606688b-6823-88fe-82fa-04cd54577ef0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Using provided service account we create/update dwh details based on the 'update' query parameter\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/dwh/post_api_1_github_backend_company__company_id__dwh__space_id__setup_bigquery\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, the new secret will be validated and saved into secret service, elsea new dataset/database and bucket/storage will be created and linked to the space",
+                        "in": "query",
+                        "name": "update",
+                        "schema": {
+                            "default": false,
+                            "title": "Update",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}/setup/snowflake/azure": {
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Setup Snowflake with Azure Blob Storage in Space",
+                "operationId": "gateway_companies__company_id__spaces__space_id__setup_snowflake_azure_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "SnowflakeAzure",
+                                "required": [
+                                    "user",
+                                    "password",
+                                    "account",
+                                    "warehouse",
+                                    "database",
+                                    "schema",
+                                    "tenant_id",
+                                    "azure_creds"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "account": {
+                                        "title": "Account",
+                                        "type": "string"
+                                    },
+                                    "azure_creds": {
+                                        "$ref": "#/components/schemas/AzureCreds"
+                                    },
+                                    "database": {
+                                        "title": "Database",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "title": "Password",
+                                        "type": "string"
+                                    },
+                                    "schema": {
+                                        "title": "Schema",
+                                        "type": "string"
+                                    },
+                                    "tenant_id": {
+                                        "title": "Tenant Id",
+                                        "type": "string",
+                                        "description": "Must be provided in case of creations"
+                                    },
+                                    "user": {
+                                        "title": "User",
+                                        "type": "string"
+                                    },
+                                    "warehouse": {
+                                        "title": "Warehouse",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "DwhResponse",
+                                    "required": [
+                                        "database_name",
+                                        "bucket_name",
+                                        "bucket_type",
+                                        "database_type",
+                                        "secret_id"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "bucket_name": {
+                                            "title": "Bucket Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "bucket_type": {
+                                            "$ref": "#/components/schemas/BucketType"
+                                        },
+                                        "database_name": {
+                                            "title": "Database Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "database_type": {
+                                            "$ref": "#/components/schemas/DatabaseType"
+                                        },
+                                        "public_schema_name": {
+                                            "title": "Public Schema Name",
+                                            "type": "string",
+                                            "default": "",
+                                            "example": "companyname_public_spacename_main"
+                                        },
+                                        "secret_id": {
+                                            "title": "Secret Id",
+                                            "type": "string",
+                                            "example": "0606688b-6823-88fe-82fa-04cd54577ef0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "azure container creds and create/update dwh details based on the 'update' query parameter then create new secret\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/dwh/post_api_1_github_backend_company__company_id__dwh__space_id__setup_snowflake_azure\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, the new secret will be validated and saved into secret service, elsea new dataset/database and bucket/storage will be created and linked to the space",
+                        "in": "query",
+                        "name": "update",
+                        "schema": {
+                            "default": false,
+                            "title": "Update",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}/setup/gcs": {
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Setup Snowflake with GCS in Space",
+                "operationId": "gateway_companies__company_id__spaces__space_id__setup_gcs_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "SnowflakeGCS",
+                                "required": [
+                                    "user",
+                                    "password",
+                                    "account",
+                                    "warehouse",
+                                    "database",
+                                    "schema",
+                                    "location",
+                                    "secret"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "account": {
+                                        "title": "Account",
+                                        "type": "string"
+                                    },
+                                    "bucket_name": {
+                                        "title": "Bucket Name",
+                                        "type": "string",
+                                        "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                    },
+                                    "database": {
+                                        "title": "Database",
+                                        "type": "string"
+                                    },
+                                    "location": {
+                                        "title": "Location",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "title": "Password",
+                                        "type": "string"
+                                    },
+                                    "schema": {
+                                        "title": "Schema",
+                                        "type": "string"
+                                    },
+                                    "secret": {
+                                        "$ref": "#/components/schemas/GoogleSecret"
+                                    },
+                                    "user": {
+                                        "title": "User",
+                                        "type": "string"
+                                    },
+                                    "warehouse": {
+                                        "title": "Warehouse",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "DwhResponse",
+                                    "required": [
+                                        "database_name",
+                                        "bucket_name",
+                                        "bucket_type",
+                                        "database_type",
+                                        "secret_id"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "bucket_name": {
+                                            "title": "Bucket Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "bucket_type": {
+                                            "$ref": "#/components/schemas/BucketType"
+                                        },
+                                        "database_name": {
+                                            "title": "Database Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "database_type": {
+                                            "$ref": "#/components/schemas/DatabaseType"
+                                        },
+                                        "public_schema_name": {
+                                            "title": "Public Schema Name",
+                                            "type": "string",
+                                            "default": "",
+                                            "example": "companyname_public_spacename_main"
+                                        },
+                                        "secret_id": {
+                                            "title": "Secret Id",
+                                            "type": "string",
+                                            "example": "0606688b-6823-88fe-82fa-04cd54577ef0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Using provided snowflake creds, google service account we can create/update dwh details based on the\n'update' query parameter then create new secret\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/dwh/post_api_1_github_backend_company__company_id__dwh__space_id__setup_snowflake_gcs\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, the new secret will be validated and saved into secret service, elsea new dataset/database and bucket/storage will be created and linked to the space",
+                        "in": "query",
+                        "name": "update",
+                        "schema": {
+                            "default": false,
+                            "title": "Update",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}/setup/s3": {
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Setup Snowflake with AWS S3 in Space",
+                "operationId": "gateway_companies__company_id__spaces__space_id__setup_s3_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "SnowflakeAwsS3",
+                                "required": [
+                                    "user",
+                                    "password",
+                                    "account",
+                                    "warehouse",
+                                    "database",
+                                    "schema",
+                                    "amazon_s3"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "account": {
+                                        "title": "Account",
+                                        "type": "string"
+                                    },
+                                    "amazon_s3": {
+                                        "$ref": "#/components/schemas/AwsS3creds"
+                                    },
+                                    "database": {
+                                        "title": "Database",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "title": "Password",
+                                        "type": "string"
+                                    },
+                                    "schema": {
+                                        "title": "Schema",
+                                        "type": "string"
+                                    },
+                                    "user": {
+                                        "title": "User",
+                                        "type": "string"
+                                    },
+                                    "warehouse": {
+                                        "title": "Warehouse",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "DwhResponse",
+                                    "required": [
+                                        "database_name",
+                                        "bucket_name",
+                                        "bucket_type",
+                                        "database_type",
+                                        "secret_id"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "bucket_name": {
+                                            "title": "Bucket Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "bucket_type": {
+                                            "$ref": "#/components/schemas/BucketType"
+                                        },
+                                        "database_name": {
+                                            "title": "Database Name",
+                                            "type": "string",
+                                            "example": "y42_spacetest_6c863b5f632248e0a2d0afec2ad162f5"
+                                        },
+                                        "database_type": {
+                                            "$ref": "#/components/schemas/DatabaseType"
+                                        },
+                                        "public_schema_name": {
+                                            "title": "Public Schema Name",
+                                            "type": "string",
+                                            "default": "",
+                                            "example": "companyname_public_spacename_main"
+                                        },
+                                        "secret_id": {
+                                            "title": "Secret Id",
+                                            "type": "string",
+                                            "example": "0606688b-6823-88fe-82fa-04cd54577ef0"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Using provided snowflake creds,s3 bucket creds we can create/update dwh details based on the\n 'update' query parameter then create new secret\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/dwh/post_api_1_github_backend_company__company_id__dwh__space_id__setup_snowflake_s3\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "If true, the new secret will be validated and saved into secret service, elsea new dataset/database and bucket/storage will be created and linked to the space",
+                        "in": "query",
+                        "name": "update",
+                        "schema": {
+                            "default": false,
+                            "title": "Update",
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies/{company_id}/spaces/{space_id}/git/{sub_path}": {
+            "get": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Git Proxy",
+                "operationId": "gateway_companies__company_id__spaces__space_id__git__sub_path__get",
+                "responses": {
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Git extra header needed with auth token while cloning.\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/proxy/get_api_1_github_backend_company__company_id__clone__space_id___sub_path_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "sub_path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Spaces"
+                ],
+                "summary": "Git Proxy",
+                "operationId": "gateway_companies__company_id__spaces__space_id__git__sub_path__post",
+                "responses": {
+                    "400": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "BadRequestResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Invalid request"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "UnauthorizedResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Authorization error, token is not valid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "NotFoundResponse",
+                                    "required": [
+                                        "error_message"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "error_message": {
+                                            "title": "Error Message",
+                                            "type": "string",
+                                            "example": "Provided space Id is invalid"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Git extra header needed with auth token while cloning.\n\nCOMPARE TO <a href=\"https://api.dev.y42.dev/api/1/github-backend/docs#/proxy/post_api_1_github_backend_company__company_id__clone__space_id___sub_path_\">ORIGINAL</a>",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "example": "Bearer API_KEY",
+                            "title": "Authorization",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "company_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "space_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "sub_path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/gateway/companies": {
+            "get": {
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Get companies",
+                "operationId": "gateway_companies_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BagRunStatus": {
+                "description": "Big run status enum.",
+                "enum": [
+                    "waiting",
+                    "pending",
+                    "ready",
+                    "invalid",
+                    "invalid_partial",
+                    "canceled",
+                    "queued",
+                    "partially_ready",
+                    "['ready', 'invalid', 'invalid_partial', 'canceled', 'partially_ready']"
+                ],
+                "title": "BagRunStatus",
+                "type": "string"
+            },
+            "JobDetailsResponse": {
+                "properties": {
+                    "company_id": {
+                        "title": "Company Id",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Timestamp in ISO format",
+                        "example": "2022-07-04T12:21:49.965447+00:00",
+                        "title": "Created At",
+                        "type": "string"
+                    },
+                    "data_contracts_status": {
+                        "$ref": "#/components/schemas/TestStatus"
+                    },
+                    "details": {
+                        "title": "Details",
+                        "type": "object"
+                    },
+                    "error": {
+                        "title": "Error",
+                        "type": "object"
+                    },
+                    "finished_at": {
+                        "description": "Timestamp in ISO format",
+                        "example": "2022-07-04T12:21:49.965447+00:00",
+                        "title": "Finished At",
+                        "type": "string"
+                    },
+                    "import_status": {
+                        "$ref": "#/components/schemas/TaskStates"
+                    },
+                    "lineage_hash": {
+                        "title": "Lineage Hash",
+                        "type": "string"
+                    },
+                    "parent_job": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/JobDetailsResponse"
+                            }
+                        ],
+                        "description": "The details of the parent job (the initial import). Only available for incremental jobs.",
+                        "title": "Parent Job"
+                    },
+                    "parent_job_id": {
+                        "description": "In case of an incremental job, contains the job_id of the initial full import. If not an incremental job, contains the job/request_id",
+                        "title": "Parent Job Id",
+                        "type": "string"
+                    },
+                    "path": {
+                        "description": "Path to the executed job definition in git (without leading slash)",
+                        "example": "src/Models/UI/NEW_UI/new_ui",
+                        "title": "Path",
+                        "type": "string"
+                    },
+                    "request": {
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "request_id": {
+                        "description": "UUID (without a timestamp prefix)",
+                        "title": "Request Id",
+                        "type": "string"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/TaskStates"
+                    },
+                    "table_statistic": {
+                        "title": "Table Statistic",
+                        "type": "object"
+                    },
+                    "tests": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "title": "Tests",
+                        "type": "array"
+                    },
+                    "tests_status": {
+                        "$ref": "#/components/schemas/TestStatus"
+                    }
+                },
+                "required": [
+                    "request_id",
+                    "parent_job_id",
+                    "path",
+                    "company_id",
+                    "status",
+                    "import_status",
+                    "created_at",
+                    "request",
+                    "details",
+                    "table_statistic",
+                    "tests"
+                ],
+                "title": "JobDetailsResponse",
+                "type": "object"
+            },
+            "TestStatus": {
+                "description": "An enumeration.",
+                "enum": [
+                    "not_started",
+                    "pending",
+                    "ready",
+                    "failed",
+                    "no_tests_configured"
+                ],
+                "title": "TestStatus",
+                "type": "string"
+            },
+            "TaskStates": {
+                "description": "An enumeration.",
+                "enum": [
+                    "pending",
+                    "ready",
+                    "invalid",
+                    "queued",
+                    "partially_ready",
+                    "partially_empty",
+                    "expired",
+                    "canceled"
+                ],
+                "title": "TaskStates",
+                "type": "string"
+            },
+            "Space": {
+                "properties": {
+                    "app_install_id": {
+                        "default": "",
+                        "title": "App Install Id",
+                        "type": "string"
+                    },
+                    "auth_type": {
+                        "default": "",
+                        "title": "Auth Type",
+                        "type": "string"
+                    },
+                    "bucket_name": {
+                        "default": "",
+                        "title": "Bucket Name",
+                        "type": "string"
+                    },
+                    "bucket_type": {
+                        "default": "",
+                        "title": "Bucket Type",
+                        "type": "string"
+                    },
+                    "company_id": {
+                        "title": "Company Id",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "title": "Created At",
+                        "type": "string"
+                    },
+                    "data_warehouse": {
+                        "additionalProperties": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        "title": "Data Warehouse",
+                        "type": "object"
+                    },
+                    "database_name": {
+                        "default": "",
+                        "title": "Database Name",
+                        "type": "string"
+                    },
+                    "database_type": {
+                        "default": "",
+                        "title": "Database Type",
+                        "type": "string"
+                    },
+                    "git_provider": {
+                        "title": "Git Provider",
+                        "type": "string"
+                    },
+                    "github_username": {
+                        "default": "",
+                        "title": "Github Username",
+                        "type": "string"
+                    },
+                    "gitlab_group_id": {
+                        "default": "",
+                        "title": "Gitlab Group Id",
+                        "type": "string"
+                    },
+                    "gitlab_user_id": {
+                        "default": "",
+                        "title": "Gitlab User Id",
+                        "type": "string"
+                    },
+                    "id": {
+                        "title": "Id",
+                        "type": "string"
+                    },
+                    "is_default": {
+                        "title": "Is Default",
+                        "type": "boolean"
+                    },
+                    "job_retention_time_minutes": {
+                        "title": "Job Retention Time Minutes",
+                        "type": "integer"
+                    },
+                    "public_schema_name": {
+                        "title": "Public Schema Name",
+                        "type": "string"
+                    },
+                    "repo_full_name": {
+                        "title": "Repo Full Name",
+                        "type": "string"
+                    },
+                    "repo_name": {
+                        "title": "Repo Name",
+                        "type": "string"
+                    },
+                    "secret_id": {
+                        "default": "",
+                        "title": "Secret Id",
+                        "type": "string"
+                    },
+                    "space_name": {
+                        "title": "Space Name",
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "title": "Updated At",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "company_id",
+                    "created_at",
+                    "git_provider",
+                    "id",
+                    "is_default",
+                    "repo_full_name",
+                    "repo_name",
+                    "space_name",
+                    "updated_at"
+                ],
+                "title": "Space",
+                "type": "object"
+            },
+            "GoogleSecret": {
+                "properties": {
+                    "auth_provider_x509_cert_url": {
+                        "title": "Auth Provider X509 Cert Url",
+                        "type": "string"
+                    },
+                    "auth_uri": {
+                        "title": "Auth Uri",
+                        "type": "string"
+                    },
+                    "client_email": {
+                        "title": "Client Email",
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "title": "Client Id",
+                        "type": "string"
+                    },
+                    "client_x509_cert_url": {
+                        "title": "Client X509 Cert Url",
+                        "type": "string"
+                    },
+                    "private_key": {
+                        "title": "Private Key",
+                        "type": "string"
+                    },
+                    "private_key_id": {
+                        "title": "Private Key Id",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "string"
+                    },
+                    "token_uri": {
+                        "title": "Token Uri",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "Type",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "project_id",
+                    "private_key_id",
+                    "private_key",
+                    "client_email",
+                    "client_id",
+                    "auth_uri",
+                    "token_uri",
+                    "auth_provider_x509_cert_url",
+                    "client_x509_cert_url"
+                ],
+                "title": "GoogleSecret",
+                "type": "object"
+            },
+            "BucketType": {
+                "description": "Bucket types",
+                "enum": [
+                    "google_cloud_storage",
+                    "azure_blob_storage",
+                    "amazon_s3"
+                ],
+                "title": "BucketType"
+            },
+            "DatabaseType": {
+                "description": "Data warehouse types",
+                "enum": [
+                    "snowflake",
+                    "bigquery"
+                ],
+                "title": "DatabaseType"
+            },
+            "AzureCreds": {
+                "properties": {
+                    "account_key": {
+                        "title": "Account Key",
+                        "type": "string"
+                    },
+                    "account_name": {
+                        "title": "Account Name",
+                        "type": "string"
+                    },
+                    "container_name": {
+                        "description": "Must be provided in case of update or linking",
+                        "title": "Container Name",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "account_key",
+                    "account_name",
+                    "container_name"
+                ],
+                "title": "AzureCreds",
+                "type": "object"
+            },
+            "AwsS3creds": {
+                "properties": {
+                    "access_key_id": {
+                        "example": "AKIARERGWEWER55Z",
+                        "title": "Access Key Id",
+                        "type": "string"
+                    },
+                    "bucket": {
+                        "default": "",
+                        "description": "Must be provided in case of update or linking",
+                        "title": "Bucket",
+                        "type": "string"
+                    },
+                    "region": {
+                        "example": "eu-west-2",
+                        "title": "Region",
+                        "type": "string"
+                    },
+                    "secret_access_key": {
+                        "example": "szoVLmNv9iFhzYuhgCwd+RTRTGEVRTREGgeg35",
+                        "title": "Secret Access Key",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "access_key_id",
+                    "secret_access_key",
+                    "region"
+                ],
+                "title": "AwsS3creds",
+                "type": "object"
+            }
+        }
+    }
+}
