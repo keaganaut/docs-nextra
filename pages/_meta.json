@@ -2,7 +2,7 @@
     "index": {
         "title": "Home"
     },
-    "apiReference": {
+    "api-reference": {
         "title": "API Reference ↗",
         "type": "page",
         "href": "https://redocly.com/",
@@ -18,27 +18,27 @@
         "type": "separator",
         "title": "Get started"
     },
-    "quickStart": {
+    "quick-start": {
         "title": "Quick start",
         "theme": {
-            "collapsed": 0
+            "collapsed": 1
         }
     },
-    "coreConcepts": "Core concepts",
+    "core-concepts": "Core concepts",
     "-- Manage pipelines --": {
         "type": "separator",
         "title": "Manage pipelines"
     },
     "sources": "Sources",
     "models": "Models",
-    "dataTests": "Data tests",
+    "data-tests": "Data tests",
     "orchestration": "Orchestration",
     "-- Consume tables --": {
         "type": "separator",
         "title": "Consume tables"
     },
     "visualization": "Visualization",
-    "dataExports": "Data exports",
+    "data-exports": "Data exports",
     "-- Monitor pipelines --": {
         "type": "separator",
         "title": "Monitor pipelines"

@@ -1,4 +1,4 @@
 {
-    "uiModels": "UI models",
-    "sqlModels": "SQL models"
+    "ui-models": "UI models",
+    "sql-models": "SQL models"
 }

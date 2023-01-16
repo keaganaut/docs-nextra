@@ -1,7 +1,0 @@
-{
-    "schemaTests": "Schema tests",
-    "columnTests": "Column tests",
-    "uniqueKeyTests": "Unique key tests",
-    "rowDriftTests": "Row drift tests",
-    "lowCodeTests": "Low-code tests"
-}

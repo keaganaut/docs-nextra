@@ -1,10 +1,10 @@
 {
-    "simpleCharts": "Simple charts",
-    "scatterPlots": "Scatter plots",
-    "numberBoxes": "Number boxes",
-    "pieCharts": "Pie charts",
-    "treeMaps": "Treemaps",
+    "simple-charts": "Simple charts",
+    "scatter-plots": "Scatter plots",
+    "number-boxes": "Number boxes",
+    "pie-charts": "Pie charts",
+    "treemaps": "Treemaps",
     "tables": "Tables",
-    "cohortTables": "Cohort tables",
-    "customWidgets": "Custom widgets"
+    "cohort-tables": "Cohort tables",
+    "custom-widgets": "Custom widgets"
 }
