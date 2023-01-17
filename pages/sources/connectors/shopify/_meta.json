@@ -1,3 +1,8 @@
 {
-    "shopify-setup-guide": "Setup guide"
+    "shopify-setup-guide": {
+        "title": "Setup guide",
+        "display": "hidden"
+    },
+    "shopify-authenticate": "Shopify authentication",
+    "shopify-configure": "Shopify configuration"
 }
