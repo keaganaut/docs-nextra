@@ -6,19 +6,19 @@ import html from "remark-html";
 
 export default async function handler(req, res) {
   const { sourceName } = req.query;
-  const bodyHtml = await getHtmlString(sourceName);
-  res.status(200).json({ bodyHtml });
+  const result = await parseMarkdown(sourceName);
+  res.status(200).json(result);
 }
 
-export async function getHtmlString(sourceName) {
+export async function parseMarkdown(sourceName) {
   const filePath = join(
     process.cwd(),
     `/pages/sources/connectors/${sourceName}/${sourceName}-setup-guide.mdx`
   );
   const fileContents = fs.readFileSync(filePath, "utf-8");
+
   const { data, content } = matter(fileContents);
-  console.log(content);
   const result = await remark().use(html).process(content);
 
-  return result.toString();
+  return { data: data, content: result.toString() };
 }
