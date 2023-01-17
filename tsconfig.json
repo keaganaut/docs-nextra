@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/markdownToHtml.js"],
   "exclude": ["node_modules"]
 }
 // {
@@ -47,6 +47,6 @@
 //       "@lib/*": ["./lib/*"]
 //     }
 //   },
-//   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+//   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/markdownToHtml.ts"],
 //   "exclude": ["node_modules"]
 // }
