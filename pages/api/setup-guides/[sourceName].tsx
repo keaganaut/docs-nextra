@@ -23,6 +23,8 @@ import html from "remark-html";
 //   return { data: data, content: result.toString() };
 // }
 
+type Suffix = "authenticate" | "configure";
+
 export default async function handler(req, res) {
   const { sourceName } = req.query;
   const auth = await parseMarkdown(sourceName, "authenticate");
@@ -30,7 +32,7 @@ export default async function handler(req, res) {
   res.status(200).json({ ...auth, ...config });
 }
 
-export async function parseMarkdown(sourceName, suffix) {
+export async function parseMarkdown(sourceName, suffix: Suffix) {
   const filePath = join(
     process.cwd(),
     `/pages/sources/connectors/${sourceName}/${sourceName}-${suffix}.mdx`
