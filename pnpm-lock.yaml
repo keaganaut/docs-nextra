@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@types/node': 18.11.18
   '@types/react': 18.0.26
+  '@vercel/analytics': ^0.1.8
   autoprefixer: ^10.4.13
   clsx: ^1.2.1
   core-js: ^3.27.1
@@ -33,6 +34,7 @@ specifiers:
   webpack: ^5.75.0
 
 dependencies:
+  '@vercel/analytics': 0.1.8_react@18.2.0
   clsx: 1.2.1
   core-js: 3.27.1
   docs-nextra: 'link:'
@@ -693,6 +695,14 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
+  /@vercel/analytics/0.1.8_react@18.2.0:
+    resolution: {integrity: sha512-PQrOI8BJ9qUiVJuQfnKiJd15eDjDJH9TBKsNeMrtelT4NAk7d9mBVz1CoZkvoFnHQ0OW7Xnqmr1F2nScfAnznQ==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@webassemblyjs/ast/1.11.1:

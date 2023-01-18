@@ -8,6 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^0.1.8",
 		"clsx": "^1.2.1",
 		"core-js": "^3.27.1",
 		"docs-nextra": "link:",
