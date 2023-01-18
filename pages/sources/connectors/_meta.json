@@ -1,4 +1,5 @@
 {
     "postgresql": "PostgreSQL",
-    "shopify": "Shopify"
+    "shopify": "Shopify",
+    "MySQL": "MySQL"
 }
