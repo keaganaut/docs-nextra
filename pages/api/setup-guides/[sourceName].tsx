@@ -5,6 +5,11 @@ import { remark } from "remark";
 import html from "remark-html";
 
 export default async function handler(req, res) {
+  res.setHeader(
+    "Cache-Control",
+    "s-maxage=3600",
+    "stale-while-revalidate=86400"
+  );
   const { sourceName } = req.query;
   const result = await parseMarkdown(sourceName);
   res.status(200).json(result);
