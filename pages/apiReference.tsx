@@ -1,6 +1,4 @@
-import fsPromises from "fs/promises";
 import Link from "next/link";
-import path from "path";
 import { RedocStandalone } from "redoc";
 
 export default function ApiReference(props) {
@@ -52,11 +50,16 @@ export default function ApiReference(props) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "./redoc/y42_openapi.json");
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData.toString());
+  const res = await fetch("https://api.dev.y42.dev/gateway/openapi.json");
+  const spec = await res.json();
+
+  // fallback to read openapispec from filesystem
+  // const filePath = path.join(process.cwd(), "./redoc/y42_openapi.json");
+  // const jsonData = await fsPromises.readFile(filePath);
+  // const objectData = JSON.parse(jsonData.toString());
 
   return {
-    props: { openApiSpec: objectData },
+    props: { openApiSpec: spec },
+    revalidate: 3600,
   };
 }
