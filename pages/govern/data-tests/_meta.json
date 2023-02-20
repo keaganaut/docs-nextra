@@ -1,4 +1,5 @@
 {
+    "data-tests": "Data Tests",
     "schema-tests": "Schema tests",
     "column-tests": "Column tests",
     "unique-key-tests": "Unique key tests",
