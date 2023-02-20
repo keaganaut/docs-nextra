@@ -17,30 +17,42 @@
         "type": "separator",
         "title": "Get started"
     },
+    "introduction": {
+        "title": "Introduction"
+    },
     "quick-start": {
         "title": "Quick start",
         "theme": {
             "collapsed": 1
         }
     },
-    "core-concepts": "Core concepts",
+    "-- Concepts --": {
+        "type": "separator",
+        "title": "Concepts"
+    },
+    "assets": "Assets",
+    "version-control": "Version control",
     "-- Manage pipelines --": {
         "type": "separator",
         "title": "Manage pipelines"
     },
-    "sources": "Sources",
-    "models": "Models",
-    "data-tests": "Data tests",
-    "orchestration": "Orchestration",
-    "-- Consume tables --": {
+    "ingest": "Ingest",
+    "transform": "Transform",
+    "test": "Test",
+    "orchestrate": "Orchestrate",
+    "export": "Export",
+    "-- Visualize --": {
         "type": "separator",
-        "title": "Consume tables"
+        "title": "Visualize"
     },
     "visualization": "Visualization",
-    "data-exports": "Data exports",
     "-- Monitor pipelines --": {
         "type": "separator",
         "title": "Monitor pipelines"
     },
-    "alerts": "Alerts"
+    "alerts": "Alerts",
+    "components": {
+        "title": "Components",
+        "display": "hidden"
+    }
 }

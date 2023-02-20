@@ -1,47 +1,15 @@
-import { Tree, File, Folder} from 'components/fileTree'
+import { Callout } from 'nextra-theme-docs'
 
-# Create a Space
+# Step 1 - Create a space
+<Callout emoji="ℹ️">
+    Skip this section if you wish to do the tutorial in an existing space
+</Callout>
 
 
-<details>
-<summary>Checklist</summary>
-
-- [x] Create a space
-- [ ] Add data source
-- [ ] Transform data
-
-</details>
-
-## Directory components
-<Tree>
-  <Folder name="src" defaultOpen>
-    <Folder name="integrations">
-    </Folder>
-    <Folder name="models" defaultOpen >
-        <File name="stg_orders.sql" />
-        <File name="stg_customers.sql" />
-        <File name="stg_payments.sql" />
-    </Folder>
-    <File name="manifest.json" />
-  </Folder>
-</Tree>
-
-### Codeblock
-```sql filename="stg_customers.sql"
-with source as (
-    select * from {{ ref('stg_customers.sql') }}
-)
-
-select * from source
-```
-
-### Table
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-### Quote
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+To start, create a space in Y42.
+1. Select **Add Space** in the space selection page or from top-left drop-down menu in any existing space
+2. Enter a space name, e.g. “`Quickstart tutorial`”
+3. Select **BigQuery**
+4. Upload a BigQuery service account key .json file (note the prerequisites written above)
+5. Choose a hosting location/region, where Y42 will create a BigQuery dataset and Google Cloud Storage bucket
+6. Select Continue → Complete setup
