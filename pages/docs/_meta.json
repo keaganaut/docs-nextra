@@ -1,0 +1,21 @@
+{
+    "getting-started": {
+        "title": "Getting started",
+        "theme": {
+            "collapsed": 0
+        }
+    },
+    "concepts": {
+        "title": "Concepts"
+    },
+    "ingest": "Ingest",
+    "transform": "Transform",
+    "publish": "Publish",
+    "orchestrate": "Orchestrate",
+    "govern": "Govern",
+    "collaborate": "Collaborate",
+    "components": {
+        "title": "Components",
+        "display": "hidden"
+    }
+}
