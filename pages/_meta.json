@@ -2,6 +2,14 @@
     "index": {
         "title": "Home"
     },
+    "docs": {
+        "title": "Docs",
+        "type": "page"
+    },
+    "tutorials": {
+        "title": "Tutorials",
+        "type": "page"
+    },
     "api-reference": {
         "title": "API Reference",
         "type": "page",
@@ -12,9 +20,5 @@
         "type": "page",
         "href": "https://app.prod.y42.dev",
         "newWindow": true
-    },
-    "docs": {
-        "title": "Docs",
-        "type": "page"
     }
 }
