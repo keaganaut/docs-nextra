@@ -6,7 +6,7 @@ export default function ApiReference(props) {
     <div>
       <div className="custom-nav-container sticky top-0 z-20 w-full bg-transparent">
         <nav className="h-12 bg-[#111] p-4 border-b-[2px] border-b-[#212121] text-[#d1d1d1] text-sm flex flex-row items-center">
-          <Link href="/"> Back </Link>
+          <Link href="/docs"> Back to Docs </Link>
         </nav>
       </div>
 
