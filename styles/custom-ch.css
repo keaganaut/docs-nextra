@@ -60,11 +60,11 @@
 /* Spotlight */
 
 .ch-spotlight {
-    @apply flex-col h-auto gap-20;
+    @apply flex-col h-auto gap-6;
 }
 
 .ch-spotlight-tabs {
-    @apply flex-row;
+    @apply flex-row order-last;
 
 }
 
@@ -96,7 +96,7 @@
 
 .ch-spotlight-tabs {
     @apply flex gap-x-2 sm:px-0 xl:gap-x-6;
-    @apply max-w-7xl w-full mx-auto px-8 gap-2 mt-6;
+    @apply max-w-7xl w-full mx-auto px-8 gap-2;
 }
 
 .ch-spotlight-tabs > :first-child {
