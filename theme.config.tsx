@@ -27,6 +27,7 @@ const Logo = ({ height, width }) => {
 
 const config: DocsThemeConfig = {
   logo: <Logo height={64} width={96} />,
+  logoLink: "/docs",
   project: {
     link: "https://github.com/keaganaut/docs-nextra",
   },

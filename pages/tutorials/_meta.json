@@ -1,0 +1,9 @@
+{
+    "*": {
+        "theme": {
+            "layout": "full"
+        }
+    },
+    "git-101": "Git 101",
+    "code-hike-examples": "Code Hike examples"
+}

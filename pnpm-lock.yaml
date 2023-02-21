@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@code-hike/mdx': ^0.8.0
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@vercel/analytics': ^0.1.8
@@ -37,6 +38,7 @@ specifiers:
   webpack: ^5.75.0
 
 dependencies:
+  '@code-hike/mdx': 0.8.0_react@18.2.0
   '@vercel/analytics': 0.1.8_react@18.2.0
   clsx: 1.2.1
   core-js: 3.27.1
@@ -201,6 +203,23 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@code-hike/lighter/0.2.6:
+    resolution: {integrity: sha512-930ImSV4LTFcYLyiKpJ1SPfU9dpJKwvMJNzBFqDYprkcPaZVHNEt+AqTqMkPSPdyRYnMuAAkX7opKwuPX/79zg==}
+    dev: false
+
+  /@code-hike/mdx/0.8.0_react@18.2.0:
+    resolution: {integrity: sha512-L0fpDHbpVtRUfNbbP5rXYxx0N63JqH+PJS03vsSShvHL+QBotx4XjrjGdEgusYd7PFqRgbcj5LIfSyB9vEK5xw==}
+    peerDependencies:
+      react: ^16.8.3 || ^17 || ^18
+    dependencies:
+      '@code-hike/lighter': 0.2.6
+      node-fetch: 2.6.8
+      react: 18.2.0
+      shiki: 0.10.1
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /@emotion/is-prop-valid/1.2.0:
@@ -3458,6 +3477,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /shiki/0.10.1:
+    resolution: {integrity: sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==}
+    dependencies:
+      jsonc-parser: 3.2.0
+      vscode-oniguruma: 1.7.0
+      vscode-textmate: 5.2.0
+    dev: false
+
   /shiki/0.12.1:
     resolution: {integrity: sha512-aieaV1m349rZINEBkjxh2QbBvFFQOlgqYTNtCal82hHj4dDZ76oMlQIX+C7ryerBTDiga3e5NfH6smjdJ02BbQ==}
     dependencies:
@@ -3991,6 +4018,10 @@ packages:
 
   /vscode-oniguruma/1.7.0:
     resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: false
+
+  /vscode-textmate/5.2.0:
+    resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
     dev: false
 
   /vscode-textmate/8.0.0:

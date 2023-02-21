@@ -1,0 +1,32 @@
+# Step 2: Ingest data from a .csv file
+
+Now we can begin building a basic pipeline by extracting and loading data from a .csv file into BigQuery.
+Here's a tiny sample dataset with 150 rows to get you started:
+
+[orders.csv](Quickstart%203a94d62534aa435bb21e8745511c6cec/orders.csv)
+
+First, define a .csv integration.
+1. On the Integrations page, select **Add**
+2. Search for and select “CSV”
+3. Enter a name for the integration, use `src_pizza_orders`
+4. Hit Commit
+
+Next, upload the .csv file to the Storage bucket.
+
+1. Select **Browse Files**
+2. Upload the tutorial orders.csv file 
+3. Leave the default settings, select **Apply**
+4. On the top navigation bar, select **Commit**
+5. Enter a commit title, e.g. “added orders data”
+6. Hit **Commit**
+
+ Finally, create a table in BigQuery.
+
+1. On the materialization drawer at the bottom of the screen, select the **Tables** tab
+2. Select **Trigger full import**
+3. Once the import job is complete, select **Preview data** to preview the table
+
+
+
+
+
