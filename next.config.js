@@ -1,6 +1,17 @@
+const { remarkCodeHike } = require("@code-hike/mdx");
+const theme = require("shiki/themes/dark-plus.json");
+
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
+  mdxOptions: {
+    remarkPlugins: [
+      [
+        remarkCodeHike,
+        { theme: theme, lineNumbers: true, showCopyButton: true },
+      ],
+    ],
+  },
 });
 
 module.exports = withNextra();
