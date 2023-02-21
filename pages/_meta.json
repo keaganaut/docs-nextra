@@ -1,6 +1,8 @@
 {
     "index": {
-        "title": "Home"
+        "title": "Home",
+        "display": "hidden",
+        "type": "page"
     },
     "docs": {
         "title": "Docs",

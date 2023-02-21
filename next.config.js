@@ -14,7 +14,19 @@ const withNextra = require("nextra")({
   },
 });
 
-module.exports = withNextra();
+const redirectIndexPage = {
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/docs",
+        permanent: true,
+      },
+    ];
+  },
+};
+
+module.exports = withNextra(redirectIndexPage);
 
 // If you have other Next.js configurations, you can pass them as the parameter:
 // module.exports = withNextra({ /* other next.js config */ })
