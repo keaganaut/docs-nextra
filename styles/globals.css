@@ -17,3 +17,12 @@
 
 } */
 
+
+/* @layer base {
+    * {
+        @apply bg-purple-700 text-cyan-300
+    }
+
+}
+ */
+

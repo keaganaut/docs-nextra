@@ -59,9 +59,10 @@ const config: DocsThemeConfig = {
       return <>{title}</>;
     },
   },
-  darkMode: true,
+  darkMode: false,
   nextThemes: {
     defaultTheme: "dark",
+    forcedTheme: "dark",
   },
   navbar: {
     component: Navbar,
