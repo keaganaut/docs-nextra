@@ -1,5 +1,11 @@
 {
-    "index": "Introduction",
+    "index": {
+        "title": "Overview",
+        "theme": {
+            "toc": false,
+            "breadcrumb": false
+        }
+    },
     "getting-started": {
         "title": "Getting started",
         "theme": {

@@ -67,6 +67,13 @@ const config: DocsThemeConfig = {
   navbar: {
     component: Navbar,
   },
+  feedback: {
+    content: null,
+  },
+  gitTimestamp: true,
+  editLink: {
+    text: "Suggest an edit",
+  },
 
   i18n: [],
 };
