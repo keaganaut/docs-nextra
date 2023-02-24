@@ -1,6 +1,7 @@
 import { Tree, File, Folder} from 'components/fileTree'
+import { Tab, Tabs } from 'nextra-theme-docs'
 
-# Create a Space
+# Components
 
 
 <details>
@@ -11,6 +12,23 @@ import { Tree, File, Folder} from 'components/fileTree'
 - [ ] Transform data
 
 </details>
+
+## Tabs
+<Tabs items={['BigQuery', 'Snowflake', 'DataBricks']} defaultIndex="0">
+  <Tab>
+    ### BigQuery
+    Lorem ipsum
+  </Tab>
+  <Tab>
+    ### Snowflake
+    Lorem ipsum
+  </Tab>
+  <Tab>
+    ### DataBricks
+    Lorem ipsum
+  </Tab>
+</Tabs>
+
 
 ## Directory components
 <Tree>
