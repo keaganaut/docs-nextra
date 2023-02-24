@@ -32,7 +32,7 @@ const config: DocsThemeConfig = {
     link: "https://github.com/keaganaut/docs-nextra",
   },
 
-  docsRepositoryBase: "https://github.com/keaganaut/docs-nextra",
+  docsRepositoryBase: "https://github.com/keaganaut/docs-nextra/tree/dev",
   footer: {
     text: "Docs MVP using Nextra",
   },
@@ -59,10 +59,10 @@ const config: DocsThemeConfig = {
       return <>{title}</>;
     },
   },
-  darkMode: false,
+  darkMode: true, //display dark mode selector component
   nextThemes: {
     defaultTheme: "dark",
-    forcedTheme: "dark",
+    // forcedTheme: "dark",
   },
   navbar: {
     component: Navbar,
@@ -70,7 +70,6 @@ const config: DocsThemeConfig = {
   feedback: {
     content: null,
   },
-  gitTimestamp: true,
   editLink: {
     text: "Suggest an edit",
   },

@@ -51,7 +51,7 @@ export function Card({ children, title, icon, image, arrow, href, ...props }) {
       className={cn(
         styles.card,
         "group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 bg-transparent text-current no-underline shadow-sm shadow-gray-100 transition-all duration-200 dark:border-neutral-800 dark:shadow-none",
-        "hover:border-gray-300 hover:bg-slate-50 hover:shadow-md hover:shadow-gray-100 dark:hover:border-neutral-700 dark:hover:bg-neutral-900 dark:hover:shadow-none",
+        "hover:border-gray-300 hover:bg-slate-50 hover:shadow-md hover:shadow-gray-100 dark:hover:border-neutral-700 dark:hover:bg-[color:var(--CoreRoot)] dark:hover:shadow-none",
         "active:shadow-sm active:shadow-gray-200"
       )}
       {...props}
