@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Y42 Night theme */
+/* Y42 NIGHT THEME */
 :root {
     --background: rgb(23, 24, 28);
     --Neutral100: rgb(26, 28, 32);
@@ -127,15 +127,14 @@
     --Pink1200: rgb(255, 218, 240);
 }
 
-/* Y42 Docs additional CSS vars */
+/* Y42 DOCS ADDITIONAL VARS */
 :root {
     --TextPrimary: rgba(255, 255, 255, 0.94);
     --TextSecondary: rgba(255, 255, 255, 0.64);
     --CoreRoot: rgba(23, 24, 28, 1);
 }
 
-/* --- Customize nextra-docs-theme defaults --- */
-
+/* --- CUSOTMIZE DEFAULTS --- */
 .nextra-sidebar-container .nx-text-sm {
     font-size: 0.95em;
 }
@@ -146,17 +145,17 @@
     transition-timing-function: cubic-bezier(.4, 0, .2, 1)
 }
 
+
 .nextra-sidebar-container {
     border-right: 1px solid var(--Neutral1200);
 }
 
 
-/* --- Customize nextra-docs-theme dark mode --- */
+/* --- CUSTOMIZE DARK MODE --- */
 html[class~=dark] body {
     background-color: var(--CoreRoot) !important;
 
 }
-
 
 /* Top navbar */
 html[class~=dark] .nextra-nav-container .dark\:nx-bg-dark {
@@ -167,18 +166,54 @@ html[class~=dark] .nextra-toc .dark\:nx-bg-dark {
     background-color: var(--CoreRoot) !important;
 }
 
+/* Search */
+html[class~=dark] .nextra-search input {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box,
+        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+}
+
+/* html[class~=dark] [tabindex]:not([tabindex="-1"]):focus-visible */
+/* /* html[class~=dark] a:focus-visible, */
+/* html[class~=dark] summary:focus-visible, */
+/* html[class~=dark] button:focus-visible, */
+html[class~=dark] input:focus-visible {
+    /* --tw-ring-opacity: 1; */
+    /* --tw-ring-color: hsl(var(--nextra-primary-hue)100% 32%/var(--tw-ring-opacity)); */
+    /* --tw-ring-offset-color: hsl(var(--nextra-primary-hue)100% 39%) */
+    box-shadow: none;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box,
+        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+    background-size: 300% 300%;
+    animation: gradient-border-bg 3s ease infinite;
+}
+
+@keyframes gradient-border-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 /* Sidebar */
 html[class~=dark] .nextra-sidebar-container {
     background-color: var(--CoreRoot);
+    border-right: 1px solid var(--Neutral200);
 }
 
 /* Sidebar text */
 html[class~=dark] .nextra-sidebar-container .dark\:nx-text-neutral-500 {
     color: var(--TextSecondary)
 }
-
-
 
 /* Sidebar active item */
 html[class~=dark] .nextra-sidebar-container .dark\:nx-bg-primary-500\/10 {
@@ -194,12 +229,7 @@ html[class~=dark] .nextra-sidebar-container .nx-text-primary-600 {
     font-weight: 500;
 }
 
-/* Sidebar panel border */
-html[class~=dark] .nextra-sidebar-container {
-    border-right: 1px solid var(--Neutral200);
-}
-
-/* Dark mode selector component drop shadow */
+/* ThemeSwitch component */
 html[class~=dark] .dark\:nx-shadow-\[0_-12px_16px_\#111\] {
     box-shadow: none !important;
 }
