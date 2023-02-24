@@ -135,6 +135,7 @@
 }
 
 /* --- CUSOTMIZE DEFAULTS --- */
+
 .nextra-sidebar-container .nx-text-sm {
     font-size: 0.95em;
 }
@@ -145,26 +146,28 @@
     transition-timing-function: cubic-bezier(.4, 0, .2, 1)
 }
 
-
 .nextra-sidebar-container {
     border-right: 1px solid var(--Neutral1200);
 }
 
 
 /* --- CUSTOMIZE DARK MODE --- */
-html[class~=dark] body {
-    background-color: var(--CoreRoot) !important;
-
-}
-
-/* Top navbar */
+html[class~=dark] body,
 html[class~=dark] .nextra-nav-container .dark\:nx-bg-dark {
     background-color: var(--CoreRoot) !important;
+
 }
 
-html[class~=dark] .nextra-toc .dark\:nx-bg-dark {
-    background-color: var(--CoreRoot) !important;
+html[class~=dark] .nextra-sidebar-container,
+html[class~=dark] .nextra-toc,
+html[class~=dark] .nextra-toc .dark\:nx-bg-dark,
+html[class~=dark] .nextra-content {
+    background-color: var(--CoreRoot);
+
 }
+
+
+/* Top navbar */
 
 /* Search */
 html[class~=dark] .nextra-search input {
@@ -206,7 +209,7 @@ html[class~=dark] input:focus-visible {
 
 /* Sidebar */
 html[class~=dark] .nextra-sidebar-container {
-    background-color: var(--CoreRoot);
+    /* background-color: var(--CoreRoot); */
     border-right: 1px solid var(--Neutral200);
 }
 
