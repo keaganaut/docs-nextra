@@ -9,7 +9,7 @@
     "getting-started": {
         "title": "Getting started",
         "theme": {
-            "collapsed": 0
+            "collapsed": false
         }
     },
     "concepts": {

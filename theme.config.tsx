@@ -15,9 +15,9 @@ const config: DocsThemeConfig = {
   primaryHue: 269,
   sidebar: {
     defaultMenuCollapseLevel: 1,
-    // toggleButton: true,
+    toggleButton: true,
   },
-  // darkMode: true, //display dark mode selector component
+  darkMode: true, //display dark mode selector component
   nextThemes: {
     defaultTheme: "dark",
     // forcedTheme: "dark",

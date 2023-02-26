@@ -14,7 +14,7 @@ specifiers:
   mobx: ^6.7.0
   next: ^13.1.1
   nextra: ^2.2.14
-  nextra-theme-docs: ^2.2.3
+  nextra-theme-docs: ^2.2.14
   postcss: ^8.4.21
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -48,7 +48,7 @@ dependencies:
   mobx: 6.7.0
   next: 13.1.1_biqbaboplfbrettd7655fr4n2y
   nextra: 2.2.14_q76c2b4vyoegvsbrcwkfvimnai
-  nextra-theme-docs: 2.2.3_q76c2b4vyoegvsbrcwkfvimnai
+  nextra-theme-docs: 2.2.14_7q4ckdafu7ealwynzv2eidet24
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 18.2.0
@@ -2730,10 +2730,11 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextra-theme-docs/2.2.3_q76c2b4vyoegvsbrcwkfvimnai:
-    resolution: {integrity: sha512-KQEhUW89kUVnMMnLubBQKMlnw30gM8e9fVBzyfQ7aTO445EGjQWbm4UF/J7VBBlcPsAP+SiYXUzbQDpQy0jLng==}
+  /nextra-theme-docs/2.2.14_7q4ckdafu7ealwynzv2eidet24:
+    resolution: {integrity: sha512-QQcHOcAXSfrpbSX3FqXgcQ2favKLnBAczqKWbSDVEtgHiUG6s7pVpxclpKm5F1c/fP47v19USRq3BL/SZ4JEIQ==}
     peerDependencies:
       next: '>=9.5.3'
+      nextra: 2.2.14
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
     dependencies:
@@ -2743,12 +2744,12 @@ packages:
       flexsearch: 0.7.31
       focus-visible: 5.2.0
       git-url-parse: 13.1.0
-      github-slugger: 2.0.0
       intersection-observer: 0.12.2
       match-sorter: 6.3.1
       next: 13.1.1_biqbaboplfbrettd7655fr4n2y
       next-seo: 5.15.0_q76c2b4vyoegvsbrcwkfvimnai
       next-themes: 0.2.1_q76c2b4vyoegvsbrcwkfvimnai
+      nextra: 2.2.14_q76c2b4vyoegvsbrcwkfvimnai
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       scroll-into-view-if-needed: 3.0.4
