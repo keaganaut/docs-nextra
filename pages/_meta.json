@@ -6,7 +6,8 @@
     },
     "docs": {
         "title": "Docs",
-        "type": "page"
+        "type": "page",
+        "display": "hidden"
     },
     "tutorials": {
         "title": "Tutorials",

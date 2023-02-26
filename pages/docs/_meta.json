@@ -1,6 +1,7 @@
 {
     "index": {
         "title": "Overview",
+        "display": "hidden",
         "theme": {
             "toc": false,
             "breadcrumb": false
