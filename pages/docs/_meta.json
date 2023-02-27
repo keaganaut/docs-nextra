@@ -4,7 +4,8 @@
         "display": "hidden",
         "theme": {
             "toc": false,
-            "breadcrumb": false
+            "breadcrumb": false,
+            "timestamp": false
         }
     },
     "getting-started": {

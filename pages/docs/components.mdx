@@ -1,23 +1,14 @@
 import { Tree, File, Folder } from 'components/fileTree'
 import { Tab, Tabs } from 'nextra-theme-docs'
-import SpotlightCards from 'components/elements/SpotlightCard'
 import { Cards, Card } from 'components/elements/cards/Card'
-import { BoxIcon } from 'components/icons/BoxIcon'
+import { IntegrationIcon, ModelIcon } from 'components/icons/product'
 
-# Components
-
-{/* # Spotlight Card */}
-{/* <SpotlightCards /> */}
+# Component
 
 # Card
-
-
-
 <Cards>
-  <Card href="/tutorials"  icon={<BoxIcon />}title="Orchestration" description="Deploy one of our templates to get started"/>
-  <Card href="/tutorials" icon={<BoxIcon />} title="Orchestration" description="Deploy one of our orchestrations templates"/>
-  <Card href="/tutorials" icon={<BoxIcon />} title="Orchestration" description="Deploy one of our orchestrations templates"/>
-  <Card href="/tutorials" icon={<BoxIcon />} title="Orchestration" description="Deploy one of our orchestrations templates"/>
+  <Card href="/tutorials"  IconElement={IntegrationIcon} title="Orchestration" description="Deploy one of our templates to get started"/>
+  <Card href="/tutorials"  IconElement={ModelIcon} title="Orchestration" description="Deploy one of our templates to get started"/>
 </Cards>
 
 --

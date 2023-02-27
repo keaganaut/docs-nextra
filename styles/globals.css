@@ -149,6 +149,39 @@
     border-right: 1px solid var(--Gray1200);
 }
 
+.nextra-sidebar-container .nx-text-gray-500 {
+    color: #4b5563;
+}
+
+.nextra-search input {
+    border: 1px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)) padding-box,
+        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+}
+
+.nextra-search input:focus-visible {
+    box-shadow: none;
+    border: 2px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)) padding-box,
+        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+    background-size: 300% 300%;
+    animation: gradient-border-bg 3s ease infinite;
+}
+
+@keyframes gradient-border-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 /* --- CUSTOMIZE DARK MODE --- */
 html[class~=dark] body,
@@ -180,7 +213,7 @@ html[class~=dark] .nextra-search input {
 /* /* html[class~=dark] a:focus-visible, */
 /* html[class~=dark] summary:focus-visible, */
 /* html[class~=dark] button:focus-visible, */
-html[class~=dark] input:focus-visible {
+html[class~=dark] .nextra-search input:focus-visible {
     /* --tw-ring-opacity: 1; */
     /* --tw-ring-color: hsl(var(--nextra-primary-hue)100% 32%/var(--tw-ring-opacity)); */
     /* --tw-ring-offset-color: hsl(var(--nextra-primary-hue)100% 39%) */
@@ -238,13 +271,3 @@ html[class~=dark] .nextra-sidebar-container .dark\:nx-shadow-\[0_-12px_16px_\#11
 html[class~=dark] .nextra-toc .dark\:nx-shadow-\[0_-12px_16px_\#111\] {
     box-shadow: none !important;
 }
-
-
-
-/* COMPONENTS */
-/* @layer components {
-    .radial-gradient-mask {
-        -webkit-mask-image: radial-gradient(farthest-side at top, #fff, transparent);
-        mask-image: radial-gradient(farthest-side at top, #fff, transparent)
-    }
-} */
