@@ -1,20 +1,66 @@
-import Image from 'next/image'
-import { Cards, Card } from 'components/elements/cards/Card'
-import { IntegrationIcon, ModelIcon, OrchestrationIcon } from 'components/icons/product'
-
-
+import Image from "next/image";
+import { Cards, Card } from "components/elements/cards/Card";
+import {
+  IntegrationIcon,
+  ModelIcon,
+  OrchestrationIcon,
+  VisualizationIcon,
+  DataCatalogIcon,
+  DataContractIcon,
+} from "components/icons/product";
+import { FontAwesomeIcon } from "components/icons/FontAwesomeIcon";
 
 # Y42 Documentation
-Y42 is a fully managed Modern DataOps Cloud — purpose-built for production-ready data pipelines on BigQuery and Snowflake.
 
+Y42 is a fully managed Modern DataOps Cloud — purpose-built for production-ready data pipelines on BigQuery and Snowflake.
 
 ## Lorem Ipsum
 
 <Cards>
-  <Card title="Ingest" href="/ingest" description="Import data into the data warehouse." IconElement={IntegrationIcon} />
-  <Card title="Transform" href="/transform" description="Convert, clean and reshape data." IconElement={ModelIcon} />
-  <Card title="Orchestrate" href="/orchestrate" description="Automate data pipeline processes." IconElement={OrchestrationIcon} />
-  <Card title="Ingest" href="/ingest" description="Import data into the data warehouse." IconElement={IntegrationIcon} />
-  <Card title="Transform" href="/transform" description="Convert, clean and reshape data." IconElement={ModelIcon} />
-  <Card title="Orchestrate" href="/orchestrate" description="Automate data pipeline processes." IconElement={OrchestrationIcon} />
+  <Card
+    title="Ingest"
+    href="/docs/ingest"
+    description="Import data into the data warehouse."
+    icon={<IntegrationIcon className="w-6 h-6" />}
+  />
+  <Card
+    title="Transform"
+    href="/docs/transform"
+    description="Convert, clean and reshape data."
+    icon={<ModelIcon className="w-6 h-6" />}
+  />
+  <Card
+    title="Publish"
+    href="/docs/publish"
+    description="Create dashboards or connect to external tools."
+    icon={<VisualizationIcon className="w-6 h-6" />}
+  />
+  <Card
+    title="Orchestrate"
+    href="/docs/orchestrate"
+    description="Automate data pipeline processes."
+    icon={<OrchestrationIcon className="w-6 h-6" />}
+  />
+  <Card
+    title="Govern"
+    href="/docs/govern"
+    description="Safeguard data quality, access and useability."
+    icon={
+      <FontAwesomeIcon
+        className="w-6 h-6 fill-orange-800 dark:fill-orange-900"
+        symbol="building-shield"
+      />
+    }
+  />
+  <Card
+    title="Collaborate"
+    href="/docs/collaborate"
+    description="Automate data pipeline processes."
+    icon={
+      <FontAwesomeIcon
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+        symbol="code-branch"
+      />
+    }
+  />
 </Cards>

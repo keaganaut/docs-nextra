@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 interface CardProps {
-  IconElement: React.FunctionComponent<any>;
+  icon: React.ReactNode;
   title: string;
   description: string;
   href: string;
@@ -12,7 +12,7 @@ export const Cards = ({ children }) => {
   return <div className="grid grid-cols-12 gap-5 my-6">{children}</div>;
 };
 
-export const Card = ({ IconElement, title, description, href }: CardProps) => {
+export const Card = ({ icon, title, description, href }: CardProps) => {
   const [mousePosition, setMousePosition] = useState({ left: 0, top: 0 });
 
   const handleMouseMove = (e: React.MouseEvent): void => {
@@ -38,8 +38,7 @@ export const Card = ({ IconElement, title, description, href }: CardProps) => {
       ></div>
 
       <div className="z-10">
-        <IconElement className="w-6 h-6" />
-
+        <div className="opacity-[85%] group-hover:opacity-100">{icon}</div>
         <h3 className="font-semibold mt-4 mb-1">{title}</h3>
         <span className=" dark:text-gray-900">{description}</span>
       </div>

@@ -1,17 +1,41 @@
-import { Tree, File, Folder } from 'components/fileTree'
-import { Tab, Tabs } from 'nextra-theme-docs'
-import { Cards, Card } from 'components/elements/cards/Card'
-import { IntegrationIcon, ModelIcon } from 'components/icons/product'
+import { Tree, File, Folder } from "components/fileTree";
+import { Tab, Tabs } from "nextra-theme-docs";
+import { Cards, Card } from "components/elements/cards/Card";
+import { IntegrationIcon, ModelIcon } from "components/icons/product";
+import { FontAwesomeIcon } from "components/icons/FontAwesomeIcon";
 
 # Component
 
 # Card
+
 <Cards>
-  <Card href="/tutorials"  IconElement={IntegrationIcon} title="Orchestration" description="Deploy one of our templates to get started"/>
-  <Card href="/tutorials"  IconElement={ModelIcon} title="Orchestration" description="Deploy one of our templates to get started"/>
+  <Card
+    href="/tutorials"
+    icon={<IntegrationIcon className="w-6 h-6" />}
+    title="Orchestration"
+    description="Deploy one of our templates to get started"
+  />
+  <Card
+    href="/tutorials"
+    icon={<ModelIcon className="w-6 h-6" />}
+    title="Orchestration"
+    description="Deploy one of our templates to get started"
+  />
+  <Card
+    href="/tutorials"
+    icon={
+      <FontAwesomeIcon
+        symbol="code-branch"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Collaborate"
+    description="Deploy one of our templates to get started"
+  />
 </Cards>
 
 --
+
 <details>
 <summary>Checklist</summary>
 
@@ -22,37 +46,29 @@ import { IntegrationIcon, ModelIcon } from 'components/icons/product'
 </details>
 
 ## Tabs
-<Tabs items={['BigQuery', 'Snowflake', 'DataBricks']} defaultIndex="0">
-  <Tab>
-    ### BigQuery
-    Lorem ipsum
-  </Tab>
-  <Tab>
-    ### Snowflake
-    Lorem ipsum
-  </Tab>
-  <Tab>
-    ### DataBricks
-    Lorem ipsum
-  </Tab>
+
+<Tabs items={["BigQuery", "Snowflake", "DataBricks"]} defaultIndex="0">
+  <Tab>### BigQuery Lorem ipsum</Tab>
+  <Tab>### Snowflake Lorem ipsum</Tab>
+  <Tab>### DataBricks Lorem ipsum</Tab>
 </Tabs>
 
-
 ## Directory components
+
 <Tree>
   <Folder name="src" defaultOpen>
-    <Folder name="integrations">
-    </Folder>
-    <Folder name="models" defaultOpen >
-        <File name="stg_orders.sql" />
-        <File name="stg_customers.sql" />
-        <File name="stg_payments.sql" />
+    <Folder name="integrations"></Folder>
+    <Folder name="models" defaultOpen>
+      <File name="stg_orders.sql" />
+      <File name="stg_customers.sql" />
+      <File name="stg_payments.sql" />
     </Folder>
     <File name="manifest.json" />
   </Folder>
 </Tree>
 
 ### Codeblock
+
 ```sql filename="stg_customers.sql"
 with source as (
     select * from {{ ref('stg_customers.sql') }}
@@ -63,22 +79,30 @@ select * from source
 
 ### Table
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 ### Quote
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
 
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
 ### iframe
 
-<iframe className="w-full aspect-[17/9]" src="https://demo.arcade.software/zCD8viTTpkBTzlOKotYv?embed" ></iframe>
+<iframe
+  className="w-full aspect-[17/9]"
+  src="https://demo.arcade.software/zCD8viTTpkBTzlOKotYv?embed"
+></iframe>
 
 ### Codehike
 
 ```python hello.py mark=1[22:30]
 print("Rendered with Code Hike")
 ```
+
+# Icons
+
+<FontAwesomeIcon symbol="code-branch" width={32} height={32} />
+<FontAwesomeIcon symbol="hippo" width={32} height={32} fill="purple" />
