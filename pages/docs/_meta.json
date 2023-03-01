@@ -14,13 +14,11 @@
             "collapsed": false
         }
     },
-    "concepts": {
-        "title": "Concepts"
-    },
     "ingest": "Ingest",
     "transform": "Transform",
-    "publish": "Publish",
     "orchestrate": "Orchestrate",
+    "visualize": "Visualize",
+    "export": "Export",
     "govern": "Govern",
     "collaborate": "Collaborate",
     "components": {

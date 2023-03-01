@@ -1,4 +1,6 @@
 {
     "import-modes": "Import modes",
-    "connectors": "Connectors"
+    "files": "Files",
+    "databases": "Databases",
+    "applications": "Applications"
 }
