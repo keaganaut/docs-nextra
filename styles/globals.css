@@ -155,7 +155,8 @@
 
 .nextra-search input {
     border: 1px solid transparent;
-    background: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)) padding-box,
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)) padding-box,
         linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
 }
 
@@ -172,7 +173,6 @@
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
@@ -184,20 +184,34 @@
 
 
 /* --- CUSTOMIZE DARK MODE --- */
+
+/* bg  */
 html[class~=dark] body,
 html[class~=dark] .nextra-nav-container .dark\:nx-bg-dark {
     background-color: var(--CoreRoot) !important;
 
 }
 
+/* bg */
 html[class~=dark] .nextra-sidebar-container,
 html[class~=dark] .nextra-toc,
 html[class~=dark] .nextra-toc .dark\:nx-bg-dark,
-html[class~=dark] .nextra-sidebar-container .dark\:nx-bg-dark,
-html[class~=dark] .nextra-content {
+html[class~=dark] .nextra-sidebar-container .dark\:nx-bg-dark {
     background-color: var(--CoreRoot);
 
 }
+
+/* links, must be within p or header tag */
+html[class~=dark] .nextra-content p > a,
+html[class~=dark] .nextra-content h1 > a,
+html[class~=dark] .nextra-content h2 > a,
+html[class~=dark] .nextra-content h3 > a,
+html[class~=dark] .nextra-content h4 > a {
+    @apply text-purple-700
+}
+
+
+
 
 
 /* Top navbar */
@@ -205,22 +219,14 @@ html[class~=dark] .nextra-content {
 /* Search */
 html[class~=dark] .nextra-search input {
     border: 1px solid transparent;
-    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box,
-        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box, linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
 }
 
-/* html[class~=dark] [tabindex]:not([tabindex="-1"]):focus-visible */
-/* /* html[class~=dark] a:focus-visible, */
-/* html[class~=dark] summary:focus-visible, */
-/* html[class~=dark] button:focus-visible, */
+
 html[class~=dark] .nextra-search input:focus-visible {
-    /* --tw-ring-opacity: 1; */
-    /* --tw-ring-color: hsl(var(--nextra-primary-hue)100% 32%/var(--tw-ring-opacity)); */
-    /* --tw-ring-offset-color: hsl(var(--nextra-primary-hue)100% 39%) */
     box-shadow: none;
     border: 2px solid transparent;
-    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box,
-        linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
+    background: linear-gradient(var(--CoreRoot), var(--CoreRoot)) padding-box, linear-gradient(97.52deg, rgba(232, 127, 68, 0.75) -31.98%, rgba(110, 38, 236, 0.75) 100%) border-box;
     background-size: 300% 300%;
     animation: gradient-border-bg 3s ease infinite;
 }
@@ -242,13 +248,11 @@ html[class~=dark] .nextra-search input:focus-visible {
 
 /* Sidebar */
 html[class~=dark] .nextra-sidebar-container {
-    /* background-color: var(--CoreRoot); */
     border-right: 1px solid var(--Gray300);
 }
 
 /* Sidebar text */
 html[class~=dark] .nextra-sidebar-container .dark\:nx-text-neutral-500 {
-    /* color: var(--Gray900) */
     color: #9ca3af
 }
 
@@ -257,17 +261,29 @@ html[class~=dark] .nextra-sidebar-container .dark\:nx-bg-primary-500\/10 {
     background-color: var(--Purple100);
 }
 
-/* Sidebar active item border, no nx-border- utility class to override so using nx-bg-primary-500 */
+
+/* Sidebar active item border */
 html[class~=dark] .nextra-sidebar-container .nx-text-primary-600 {
-    color: var(--TextPrimary);
-    border-style: solid;
-    border-color: var(--Purple400);
-    border-width: 1px;
-    font-weight: 500;
+    @apply text-purple-800 bg-purple-200
+}
+
+/* TOC */
+html[class~=dark] .nextra-toc .nx-text-primary-600 {
+    @apply text-purple-700
 }
 
 /* ThemeSwitch component */
 html[class~=dark] .nextra-sidebar-container .dark\:nx-shadow-\[0_-12px_16px_\#111\],
 html[class~=dark] .nextra-toc .dark\:nx-shadow-\[0_-12px_16px_\#111\] {
     box-shadow: none !important;
+}
+
+/* Steps component */
+html[class~=dark] .nextra-steps h3:before {
+    @apply border-gray-100 bg-purple-400 text-[var(--TextPrimary)] !important;
+}
+
+/* Tabs component */
+html[class~=dark] [role=tablist] .nx-text-primary-600 {
+    @apply text-purple-700 border-purple-700 !important;
 }

@@ -1,13 +1,34 @@
 import { Tree, File, Folder } from "components/fileTree";
-import { Tab, Tabs } from "nextra-theme-docs";
+import { Tab, Tabs, Steps } from "nextra-theme-docs";
 import { Cards, Card } from "components/elements/cards/Card";
 import { IntegrationIcon, ModelIcon } from "components/icons/product";
 import { FontAwesomeIcon } from "components/icons/FontAwesomeIcon";
-import { Hero } from "components/hero/Hero";
+import Link from "next/link";
 
 # Components
 
-<Hero /># Card
+<Steps className="">
+### Create a space
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+- Nisi ut aliquip ex ea commodo consequat.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+```sql
+SELECT * from my_table
+
+
+```
+
+### Add an integrations
+
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+### Configure .yml file
+
+</Steps>
 
 <Cards>
   <Card
@@ -49,9 +70,9 @@ import { Hero } from "components/hero/Hero";
 ## Tabs
 
 <Tabs items={["BigQuery", "Snowflake", "DataBricks"]} defaultIndex="0">
-  <Tab>### BigQuery Lorem ipsum</Tab>
-  <Tab>### Snowflake Lorem ipsum</Tab>
-  <Tab>### DataBricks Lorem ipsum</Tab>
+  <Tab> BigQuery Lorem ipsum </Tab>
+  <Tab> Snowflake Lorem ipsum </Tab>
+  <Tab> DataBricks Lorem ipsum </Tab>
 </Tabs>
 
 ## Directory components
