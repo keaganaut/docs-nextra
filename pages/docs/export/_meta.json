@@ -1,3 +1,4 @@
 {
-    "export-stub": "export stub"
+    "export-stub": "export stub",
+    "another-export-stub": "another export stub"
 }
