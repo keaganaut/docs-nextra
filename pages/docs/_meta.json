@@ -14,8 +14,8 @@
             "collapsed": false
         }
     },
-    "ingest": "Ingest",
-    "transform": "Transform",
+    "ingest-data": "Ingest data",
+    "transform-data": "Transform data",
     "orchestrate": "Orchestrate",
     "visualize": "Visualize",
     "export": "Export",
