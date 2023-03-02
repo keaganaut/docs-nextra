@@ -10,13 +10,20 @@
 # Order is important; the last matching pattern takes the most precedence.
 
 # All files
-* @keaganaut
+# * @keaganaut
 
 # Content pages
-/pages/docs/ @keaganaut @TimStrietzel
-/pages/tutorials/ @keaganaut @TimStrietzel
+# /pages/docs/ @keaganaut @TimStrietzel
+# /pages/tutorials/ @keaganaut @TimStrietzel
 
 # md/mdx files
-*.md @keaganaut @TimStrietzel
-*.mdx @keaganaut @TimStrietzel
+# *.md @keaganaut @TimStrietzel
+# *.mdx @keaganaut @TimStrietzel
+
+
+# all except docs, tutorials and public folders
+* @keaganaut
+/pages/docs
+/pages/tutorials
+/public/
 
