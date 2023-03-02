@@ -23,7 +23,7 @@
 
 # all except docs, tutorials and public folders
 * @keaganaut
-/pages/docs
-/pages/tutorials
+/pages/docs/
+/pages/tutorials/
 /public/
 
