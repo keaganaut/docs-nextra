@@ -14,6 +14,12 @@
             "collapsed": false
         }
     },
+    "organization-setup": "Organization setup",
+    "manage-spaces": "Manage spaces",
+    "---": {
+        "title": "",
+        "type": "separator"
+    },
     "ingest-data": "Ingest data",
     "transform-data": "Transform data",
     "orchestrate": "Orchestrate",

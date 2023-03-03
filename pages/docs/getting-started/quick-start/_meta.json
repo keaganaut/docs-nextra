@@ -1,5 +1,7 @@
 {
-    "create-a-space": "Step 1: Create a space",
-    "ingest-data": "Step 2: Ingest data",
-    "transform": "Step 3: Transform data"
+    "create-a-space": "Create a space",
+    "ingest-data": "Ingest data",
+    "transform-data": "Transform data",
+    "schedule-a-run": "Schedule a run",
+    "visualize-results": "Visualize results"
 }
