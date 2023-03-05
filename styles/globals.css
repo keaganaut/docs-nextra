@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* tempfix for code hike sticky elements issue: https://github.com/shuding/nextra/issues/1481 */
+article.nextra-content {
+    @apply overflow-x-clip !important;
+}
+
+
 /* Y42 NIGHT THEME */
 :root {
     --background: rgb(23, 24, 28);
@@ -287,3 +294,4 @@ html[class~=dark] .nextra-steps h3:before {
 html[class~=dark] [role=tablist] .nx-text-primary-600 {
     @apply text-purple-700 border-purple-700 !important;
 }
+
