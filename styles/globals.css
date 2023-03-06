@@ -292,6 +292,6 @@ html[class~=dark] .nextra-steps h3:before {
 
 /* Tabs component */
 html[class~=dark] [role=tablist] .nx-text-primary-600 {
-    @apply text-purple-700 border-purple-700 !important;
+    @apply text-[var(--TextPrimary)] border-purple-600 focus:ring-0 focus:ring-offset-0;
 }
 
