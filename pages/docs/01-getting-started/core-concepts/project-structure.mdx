@@ -1,0 +1,89 @@
+# Project Structure
+
+In Y42, you can achieve a clean set-up and separation of concerns in your solutions by leveraging the two possible structural levels: Organizations and spaces.
+
+## Organization
+Organizations are the highest level organizational structure in Y42. An organization consists of users, settings and spaces.
+
+<Cards>
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="users"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Users"
+    description="A set of users and teams that can be provisioned and de-provisioned"
+  />
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="code-branch"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Settings"
+    description="Organization-wide settings affecting access control, billing, usability preferences, and beyond"
+  />
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="planet-ringed"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Spaces"
+    description="A set of Y42 spaces in which your users build isolated solutions"
+  />
+</Cards>
+
+We encourage Y42 customers to use a single organization, as it offers enough access control capabilities to hide classified projects. If your concern is keeping an air-tight separation between use cases and company functions, spaces are ideally suited for delivering such functionality.
+
+Although users are provisioned by the first organization to give them Y42 access, your users could potentially belong to multiple organizations.
+
+## Spaces
+Spaces are the isolated containers where your Y42 projects happen. Every space is connected to a GitLab repository storing the files defining your solution and to a BigQuery instance hosting the Dataset of tables used in that space.
+
+Working in spaces keeps your project separated on different levels:
+
+<Cards>
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="<i class="fa-solid fa-screen-users"></i>"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Interface level"
+    description="Only the selected space's data assets will be discoverable in the app. This affects the asset lists in all product areas, the data lineage, and the global search"
+  />
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="files"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Filesystem level"
+    description="Linking the space to an isolated repository means that there can be no clashes between equally-named assets across spaces, nor unintentional changes to files due to double references"
+  />
+  <Card
+    icon={
+      <FontAwesomeIcon
+        symbol="shield-halved"
+        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+      />
+    }
+    title="Access control level"
+    description=" Space-specific access control settings permit fine-grained permissions"
+  />
+</Cards>
+
+
+### Cross Space data transfer
+One can get data from one space to another using the native Data Warehouse integration to import the needed dataset and tables.
+
+
+### Forking a Space
+It is possible to replicate ("fork") a space by spinning up a new one from a repository that has been forked from the repository of the first space. Subsequent updates to the second repository would not affect the first one.
