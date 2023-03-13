@@ -8,25 +8,25 @@
             "timestamp": false
         }
     },
-    "getting-started": {
+    "01-getting-started": {
         "title": "Getting started",
         "theme": {
             "collapsed": false
         }
     },
-    "organization-setup": "Organization setup",
-    "manage-spaces": "Manage spaces",
+    "02-organization-setup": "Organization setup",
+    "03-manage-spaces": "Manage spaces",
     "---": {
         "title": "",
         "type": "separator"
     },
-    "ingest-data": "Ingest data",
-    "transform-data": "Transform data",
-    "orchestrate": "Orchestrate",
-    "visualize": "Visualize",
-    "export": "Export",
-    "govern": "Govern",
-    "collaborate": "Collaborate",
+    "04-ingest-data": "Ingest data",
+    "05-transform-data": "Transform data",
+    "06-orchestrate": "Orchestrate",
+    "07-visualize": "Visualize",
+    "08-export": "Export",
+    "09-govern": "Govern",
+    "10-collaborate": "Collaborate",
     "components": {
         "title": "Components",
         "display": "hidden"
