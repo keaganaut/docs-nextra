@@ -1,0 +1,27 @@
+import { Steps, Callout } from "nextra-theme-docs";
+import Image from 'next/image';
+import Link from "next/link";
+
+# Configure Azure for Snowflake Spaces
+
+<Steps className="">
+### Create Azure Account and get the Account Name
+Set up a [Microsoft Azure account](https://azure.microsoft.com/en-us/free/) if you do not already have one. Make sure to also properly set up billing. 
+
+After the set-up you can find the Account name on the top of the screen.
+
+
+<Image src="/asset_library/create_snowflake_space_configure_azure.png" alt="Find the Account Id" width={1200} height={1200} />
+
+### Set-Up a Container
+In Azure Management Console, go to Data storage / Containers and create a new container.
+
+### Set-Up an Access Key
+
+Please follow the [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys) and retreive an account key
+
+### Done
+Now you are ready to proceed creating your [Snowflake Space](/docs/manage-spaces/create-space-snowflake) in Y42.
+
+
+</Steps>

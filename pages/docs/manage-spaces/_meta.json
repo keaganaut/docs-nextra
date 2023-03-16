@@ -1,3 +1,4 @@
 {
-    "invite-users": "Invite users"
+    "create-space-bigquery": "Create a space on Google Big Query DWH",
+    "create-space-snowflake": "Create a space on Snowflake DWH"
 }
