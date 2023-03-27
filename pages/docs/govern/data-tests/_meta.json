@@ -1,8 +1,5 @@
 {
     "data-tests": "Data Tests",
-    "schema-tests": "Schema tests",
-    "column-tests": "Column tests",
-    "unique-key-tests": "Unique key tests",
-    "row-drift-tests": "Row drift tests",
-    "low-code-tests": "Low-code tests"
+    "types-tests": "Types of Data Tests",
+    "how-to-create-tests": "How to create Data Tests"
 }

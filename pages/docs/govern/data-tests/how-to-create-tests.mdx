@@ -1,0 +1,62 @@
+# How to Create Data Tests
+
+## 1) Make sure you have created an output out of a model, or a successful integration job
+Note: The data Test button will not be clickable if you do not have at least 1 successful Job
+
+## 2) Go to Job Overview (Of an Integration, UI Model, SQL model)
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/QKOfN9sMPxo67IT8arWxF7nc.png)
+
+## 3) Find a Ready status table that you want to test and click the button Data Tests
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/80DvfFnT0u_zpKW37j0aRcQp.png)
+
+## 4) Add the Schema Test
+
+First you can do is add the schema of the tests, which sets the first conditions under which the actual tests are build.
+
+This will be your first mandatory test!
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/spH2UPBRwfAYZa_pFq1JnSGi.png)
+In the schema you can:
+
+- Add/Remove the Columns you will test further.
+- Select the Column type (By default it will be mapped the actual column type).
+- Select if you accept null values of them
+- Select if these columns are required or not (Should or should not exist in the actual output table)
+- Allow new columns to be added in the output table or not.
+
+**Note:** You can change this setup anytime later.
+
+You have the possibility to preview the actual table data in the UI of the test setup making it easier to make the necessary decisions while sitting up the tests.
+
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/ta6Enb2PGEwNTFMchhgaP9bf.png)
+
+## 5) Run the test
+Click the run button and the Table will be checked for the conditions you setup.
+
+If everything matches then the test will be successful.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/-OK7wl87go0S6V6-gQYopEGC.png)
+
+If I change one condition intentionally, like for the first column in the image from Float type into String and run it, the test will fail.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/32GlYtSHaEKdS2zVQikKoxgn.png)
+
+## 6) Save the test.
+After you click the save button the first test (Schema test) will be saved.
+
+Now you can add other types of tests.
+
+## 7) Add other types of tests (Optional)
+Now you can add ass many tests as you want.
+
+In this step you can add:
+
+- Column tests
+- Row number Drift
+- Unique Key
+- Low-Code Condition
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/HO9cAFMXUvM0kojGo6maGX3F.png)
+
+## Add an Orchestration (Optional)
+To make the test run every time the table is imported/triggered, you need to run an orchestration to make the process automatic and reliable.
+
+## 9) View the Jobs in the Job overview of the data tests (Optional)
+In this section are listed all the statuses of the test runs.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/3bPUH9-J3O27MTc_lomZho_x.png)
