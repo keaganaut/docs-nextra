@@ -1,0 +1,262 @@
+# Folder structure per asset types
+
+Every asset in the platform is defined by a minimum of two files:
+
+- `metadata.json`: All the relevant metadata for a specific asset. This file generally always has the same structure.
+- `settings.json`: All the specific configuration of the data asset. The structure of this file depends on the particular asset type.
+Some assets require additional files to specify their functionality. For example, integrations have an `accounts.json` file that records the authenticated accounts.
+
+## Integrations and Models
+
+**Integrations** are responsible for bringing data from their origin into your warehouse. **Models** allow transforming data to make it more usable and surfacing the insights that you need. Although Models and Integrations meet different functionalities, there are parallels in their functioning, and rely on similar specification files.
+
+<CH.Scrollycoding>
+
+### Assets
+```bash integration-model-folder focus=1:5
+[Integrations/Models]
+  └── integration/model_1
+      ├── metadata.json
+      ├── settings.json
+      ├── ui-model.json
+      │
+      ├── table_folder_1
+      │   ├── metadata.json
+      │   ├── settings.json
+      │   ├── sql-model.sql
+      │   └── tests.json
+      ├── table_folder_n
+      │   ├── metadata.json
+      │   ├── settings.json
+      │   ├── sql-model.sql
+      │   └── tests.json
+      │
+      └── .y42
+          ├── accounts.json
+          ├── secret.enc
+          └── schema.json
+```
+- Created for *every integration* you define in the app
+- `metadata.json` defines the metadata specific to the integration/model
+- `settings.json` holds the general configuration for the integration/model
+- `ui-model.json` (for UI models) defines the set of blocks and functions that make up a UI Model and their position in the canvas
+
+---
+
+### Tables
+```js integration-model-folder focus=7:16
+
+```
+- Created for *every table* that the integration/model generates
+- `metadata.json` defines the metadata specific to the table
+- `settings.json` contains all columns and schema configurations for a specific table
+- `sql-model.json` (for SQL models) holds the SQL query to be run against the warehouse
+- `tests.json` defines all data tests
+
+---
+
+### Y42 Internal
+```js integration-model-folder focus=17:20
+
+```
+- Hidden folder that contains the most private setup information about an integration/model
+- `accounts.json` (for integrations) holds information about authenticated accounts
+- `secret.enc` contains the id of the encrypted secret
+- `schema.json` specifies the configuration of the data we want to import
+
+
+</CH.Scrollycoding>
+
+
+## Exports
+
+Exports take care of the reverse EL functionality in our platform: They enable you to pour processed data right where your data users expect it.
+
+You can think of exports as the potential destinations where you want to move your data and triggers as the actual representation of your warehouse tables within those destinations.
+
+<CH.Scrollycoding>
+
+### Exports
+```bash export-folder focus=1:4
+[Exports]
+    └── export_1
+        ├── metadata.json
+        ├── settings.json
+        │
+        ├── trigger_folder_1
+        │   ├── metadata.json
+        │   └── settings.json
+        ├── trigger_folder_n
+        │   ├── metadata.json
+        │   └── settings.json
+        │
+        └── .y42
+            ├── accounts.json
+            ├── secret.enc
+            └── schema.json
+```
+- Created for *every export* you define in the app
+- `metadata.json` defines the metadata specific to the export 
+- `settings.json` holds the general configuration for the export
+
+---
+
+### Triggers
+```js export-folder focus=6:11
+
+```
+- Created for every trigger source configuration
+- `metadata.json` defines the metadata specific to the table
+- `settings.json` contains all columns and schema configurations for a specific table
+
+---
+
+### Y42 Internal
+```js export-folder focus=13:16
+
+```
+- Hidden folder that contains the most private setup information about an export target
+- `accounts.json` holds information about authenticated accounts
+- `secret.enc` contains the id of the encrypted secret
+- `schema.json` specifies the configuration of the data we want to export
+
+
+</CH.Scrollycoding>
+
+## Visualizations
+
+The visualization area is responsible for helping you produce insightful and beautiful representations of your data. In Y42 visualizations, one builds widgets that can then be bundled into dashboards, every of which can have multiple tabs. Additionally, one can create themes that allow styling entire dashboards and save filters for individual tabs. You can find the comprehensive descriptions in the visualization documentation.
+
+As there are four asset types within visualizations, the visualization folder is broken into four subfolders: Widgets, Dashboards, Themes, and Filters. every of these assets is defined by a metadata.json and a settings.json file.
+
+The metadata.json defines the same pieces of information as in other product areas. However, it's worth exploring the responsibilities of settings.json for the different visualizations assets:
+
+<CH.Scrollycoding>
+
+### Dashboards
+```bash visualization-folder focus=1:20
+[Visualizations]
+    ├── Dashboards
+    │   ├── dashboard_1
+    │   │   ├── tab_1
+    │   │   │   ├── canvas
+    │   │   │   │   └── abcd-[...]-efgh.json
+    │   │   │   └── metadata.json
+    │   │   ├── tab_2
+    │   │   │   ├── canvas
+    │   │   │   │   └── abcd-[...]-efgh.json
+    │   │   │   └── metadata.json
+    │   │   ├── metadata.json
+    │   │   └── settings.json
+    │   └── dashboard_2
+    │       ├── tab_1
+    │       │   ├── canvas
+    │       │   │   └── abcd-[...]-efgh.json
+    │       │   └── metadata.json
+    │       ├── metadata.json
+    │       └── settings.json
+    │
+    ├── Filters
+    │   ├── filter_1
+    │   │   ├── metadata.json
+    │   │   └── settings.json
+    │   └── filter_2
+    │       ├── metadata.json
+    │       └── settings.json
+    │
+    ├── Themes
+    │   ├── dashboard_1    
+    │   │   ├── metadata.json
+    │   │   └── settings.json
+    │   └── dashboard_2 
+    │       ├── metadata.json
+    │       └── settings.json
+    │
+    └── Widgets
+        ├── widget_1
+        │   ├── metadata.json
+        │   └── settings.json
+        └── widget_2
+            ├── metadata.json
+            └── settings.json
+```
+- Created for every dashboard you define in the app
+- `metadata.json` defines the metadata specific to the export 
+- `settings.json` the file defines the theme and the order of the tabs
+
+---
+
+### Filters
+```js visualization-folder focus=22:28
+```
+- Created for every filter used in any of the dashboards
+- `metadata.json` defines the metadata specific to the export 
+- `settings.json` Specifies the field(s) to be filtered, data type(s), filter type, and the logic of the filter
+
+---
+
+### Themes
+```js visualization-folder focus=30:36
+```
+- Created for every dashboard you define in the app
+- `metadata.json` defines the metadata specific to the export 
+- `settings.json` the file specifies the theme in case it's a built-in one or the color palette if it's a custom one. Notice that there'll be a theme folder for every existing dashboard, even if all dashboards sport the same built-in theme
+
+---
+### Widgets
+```js visualization-folder focus=38:44
+```
+- Created for every widget you created in the app
+- `metadata.json` defines the metadata specific to the export 
+- `settings.json` the file allows configuring the widget type, properties, and behavior. Y42 has complete Echarts support. For further information, read the extended guide
+
+</CH.Scrollycoding>
+
+
+## Orchestrations
+
+Orchestrations set the heartbeat of your Y42 solutions. They make sure that the components of your pipeline are automatically run such that you get fresh data where you need it, when you need it.
+An orchestration allows scheduling runs of its components, such that you don't need to trigger them manually. Subsequently, orchestration jobs are the only ones that can trigger other jobs' execution.
+
+<CH.Scrollycoding>
+
+```bash orchestration-folder focus=1:7
+[Orchestrations]
+    ├── orchestration_1
+    │   ├── metadata.json
+    │   └── settings.json
+    └── orchestration_2
+        ├── metadata.json
+        └── settings.json
+```
+- Created for *every orchestration* you define in the app
+- `metadata.json` defines the metadata specific to the orchestration 
+- `settings.json` Specifies the integrations, models, or exports triggered by the orchestration, their schedule, and their execution order and mode - Incremental or full
+
+
+</CH.Scrollycoding>
+
+## Alerts
+
+Alerts allow notifying users based on the status of the last valid job of data asset that meets sfpecific criteria, such as matching tags or a specific naming convention.
+Soon, we aim to offer connectors that allow streaming these alerts to your preferred communication channels, such as Slack, Teams, or Webhook.
+
+The alerts folder is divided into two subfolders: one for connections and the other one for status alerts. As of today, only the Status Alerts folder is populated, and its items look as follows:
+
+<CH.Scrollycoding>
+
+```bash alerts-folder focus=1:7
+[Alerts]
+    ├── alert_1
+    │   ├── metadata.json
+    │   └── settings.json
+    └── alert_2
+        ├── metadata.json
+        └── settings.json
+```
+- Created for *every alert* you define in the app
+- `metadata.json` defines the metadata specific to the orchestration 
+- `settings.json` Specifies the status type that the alert flags, what kind of assets are matched, and the output channel for the alert
+
+
+</CH.Scrollycoding>
