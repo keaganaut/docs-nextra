@@ -1,0 +1,18 @@
+# Core Concepts
+## How Y42 works, in a nutshell
+
+See the other articles in this section for further details, but for a high level summary, the following is a good starting point:
+
+Y42 runs your data operations, powered by a data warehouse (Snowflake or BigQuery), by managing configuration files and pipeline logic in Git, and executing jobs in the warehouse based on these files.
+
+## In more detail
+
+- Y42 [ingests]( /docs/ingest-data) data by using so called integrations (also known as connectors)
+- Data is [transformed](/docs/transform-data) using models
+- Running jobs will load data any integration or model:
+	- These jobs create physical tables in the warehouse
+	- When an integration or model is refreshed, the previous physical table is not deleted, but rather a new version of the table is created and given a randomized ID
+	- Y42 will automatically keep track of the latest table ID for each, diligently respecting any changes introduced across branches - so when a table is referenced in any other model later on in the pipeline, the latest valid data is always used, automatically
+	- If a pipeline change is rolled back, e.g. after an erroneous change, Y42 will automatically fall back to the corresponding previous table if it still exists (if it was already cleaned up, it will need to be rebuilt)
+- To keep data fresh, [orchestrations](/docs/orchestrate) can be created that automatically refresh a pipeline on a regular schedule
+- Integration, Models, Orchestrations, but also other objects like Dashboards or Widgets, are also referred to as [Data Assets](/docs/getting-started/core-concepts/data-assets) in Y42
