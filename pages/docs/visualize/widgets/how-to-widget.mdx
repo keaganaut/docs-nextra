@@ -1,0 +1,60 @@
+import Image from 'next/image';
+
+## How to work with Widgets
+
+### Create a Widget & Select a Data Source
+
+Visualization widgets are the main component of your dashboards and allow you to quickly visualize your data and dive deep into data analytics.
+
+You can create widgets inside a dashboard tab or directly from the Widget List View
+
+Inside a dashboard tab:
+    1. Go to Edit Mode
+    2. Select the widget icon from the canvas toolbar and place the widget on the canvas
+    3. Select 'Create a Widget'
+    4. Select a data table to create a widget from the list presented to you. You can use output tables from models or select tables directly from integrations.
+
+[comment]: <> (adjust image)
+<Image src="/asset_library/how_to_widget_create_1.gif" alt="Create a Widget" width={1200} height={1200} />
+
+In the Widget List View:
+
+Select Add...
+Select a data table to create a widget from the list presented to you. You can use output tables from models or select tables directly from integrations.
+<Image src="/asset_library/how_to_widget_create_2.gif" alt="Add a widget" width={1200} height={1200} />
+
+### Build a Widget
+
+You can a build a widget in 2-5 simple steps.
+
+1. From the list of fields, select all Dimensions, Measures or Calculated Fields that you wish to use in your widget. This can be done in one of 3 ways:
+
+    1. By dragging the field into your chosen drop area
+    2. By selecting the check mark next to the field, allowing Y42 to suggest a drop area for the field
+    3. By selecting 'Edit columns' in your chosen drop area
+
+2. Choose your widget type. Currently, we support Simple Charts, Scatter Plots, Number Boxes, Pie Charts, Treemaps, Tables (simple & pivot), and Cohort Tables.
+
+3. If necessary, change the settings for an individual field.
+
+    1. To change display settings, go to the field settings dropdown next to the field
+    2. To change the aggregation type for a field (e.g. AVG, SUM, YEAR, YEAR & MONTH), hover & select the aggregation text
+
+4. If necessary, change widget-level settings such as the axis display format. To do this, head to the settings tab for the widget. Note that these settings overwrite global settings you apply on a dashboard level.
+
+5. If necessary, apply filters on the displayed widget. These filters are applied in addition to any dashboard filters. To do this, either:
+    1. Drag the filtering field into the filters drop area
+    2. Select the Filters button in the widget builder
+
+Lastly, don't forget to save & close your widget! You'll need to give it a name, and you can give it a description if you would like.
+<Image src="/asset_library/how_to_widget_create.gif" alt="Build a Widget" width={1200} height={1200} />
+
+### Reference Documentation
+For much more information on all settings in the Widget Builder, head to our reference documentation on the following topics:
+
+    - Selecting Fields
+    - Field Settings
+    - Chart Settings
+    - Conditional/ Color Formatting
+    - Navigation
+
