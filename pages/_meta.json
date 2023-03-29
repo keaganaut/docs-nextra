@@ -1,6 +1,17 @@
 {
     "index": {
-        "title": "Home"
+        "title": "Home",
+        "display": "hidden",
+        "type": "page"
+    },
+    "docs": {
+        "title": "Docs",
+        "type": "page",
+        "display": "hidden"
+    },
+    "tutorials": {
+        "title": "Tutorials",
+        "type": "page"
     },
     "api-reference": {
         "title": "API Reference",
@@ -12,35 +23,5 @@
         "type": "page",
         "href": "https://app.prod.y42.dev",
         "newWindow": true
-    },
-    "-- Get started --": {
-        "type": "separator",
-        "title": "Get started"
-    },
-    "quick-start": {
-        "title": "Quick start",
-        "theme": {
-            "collapsed": 1
-        }
-    },
-    "core-concepts": "Core concepts",
-    "-- Manage pipelines --": {
-        "type": "separator",
-        "title": "Manage pipelines"
-    },
-    "sources": "Sources",
-    "models": "Models",
-    "data-tests": "Data tests",
-    "orchestration": "Orchestration",
-    "-- Consume tables --": {
-        "type": "separator",
-        "title": "Consume tables"
-    },
-    "visualization": "Visualization",
-    "data-exports": "Data exports",
-    "-- Monitor pipelines --": {
-        "type": "separator",
-        "title": "Monitor pipelines"
-    },
-    "alerts": "Alerts"
+    }
 }

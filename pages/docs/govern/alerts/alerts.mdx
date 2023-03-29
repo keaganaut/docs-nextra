@@ -1,0 +1,27 @@
+# Overview
+
+## What are Status Alerts in Y42
+
+Alerts is a powerful tool that Y42 offers to keep you alert on the status of the imports and schedules. What it does is very straight forward, it automates the notifications based on the status of the source (Success, Failure, Partial Success).
+
+You need to find an existing Integration/Model/Export/SQL-Model/Orchestration that you want to watch for statuses changes.
+
+You can decide when the notification will trigger, what is the message, who receives it.
+
+## Why use them?
+
+Lets suppose you have an orchestration running that always triggers a table that you are interested in always being updated.
+
+You might want to know at real time when the integration fails so you can rely on your data.
+
+This is why you set up Alerts in order to have this knowledge at the right time automatically.
+
+If you do not use Alerts you would have to go to each time the orchestration triggers to view if you are working with updated data.
+
+## Who should use them?
+
+Status Alerts should be used only for integrations, models, exports or orchestrations who run often and there is a probability that once in a while might fail.
+
+If your data changes, like for example your integration might be connected to PayPal, and you always make new sales, which means new rows will be added in your integrations, and on top of that you run your analytics using probably a model or visualization layer then you definitely need to run an orchestration in order to keep working with updated data. Now there are a lot of expediencies on the data so it might be important to add Status Alerts for you to get the statuses in real time on your email or Y42 notification system in a tailored manner.
+
+If your data set does not change constantly then Status Alerts will not provide an added value to your flow.

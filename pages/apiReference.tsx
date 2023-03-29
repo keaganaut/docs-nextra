@@ -1,6 +1,4 @@
-import fsPromises from "fs/promises";
 import Link from "next/link";
-import path from "path";
 import { RedocStandalone } from "redoc";
 
 export default function ApiReference(props) {
@@ -8,7 +6,7 @@ export default function ApiReference(props) {
     <div>
       <div className="custom-nav-container sticky top-0 z-20 w-full bg-transparent">
         <nav className="h-12 bg-[#111] p-4 border-b-[2px] border-b-[#212121] text-[#d1d1d1] text-sm flex flex-row items-center">
-          <Link href="/"> Back </Link>
+          <Link href="/docs"> Back to Docs </Link>
         </nav>
       </div>
 
@@ -52,11 +50,16 @@ export default function ApiReference(props) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "./redoc/y42_openapi.json");
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData.toString());
+  const res = await fetch("https://api.dev.y42.dev/gateway/openapi.json");
+  const spec = await res.json();
+
+  // fallback to read openapispec from filesystem
+  // const filePath = path.join(process.cwd(), "./redoc/y42_openapi.json");
+  // const jsonData = await fsPromises.readFile(filePath);
+  // const objectData = JSON.parse(jsonData.toString());
 
   return {
-    props: { openApiSpec: objectData },
+    props: { openApiSpec: spec },
+    revalidate: 3600,
   };
 }

@@ -1,0 +1,34 @@
+{
+    "index": {
+        "title": "Overview",
+        "display": "hidden",
+        "theme": {
+            "toc": false,
+            "breadcrumb": false,
+            "timestamp": false
+        }
+    },
+    "getting-started": {
+        "title": "Getting started",
+        "theme": {
+            "collapsed": false
+        }
+    },
+    "organization-setup": "Organization setup",
+    "manage-spaces": "Manage spaces",
+    "---": {
+        "title": "",
+        "type": "separator"
+    },
+    "ingest-data": "Ingest data",
+    "transform-data": "Transform data",
+    "orchestrate": "Orchestrate",
+    "visualize": "Visualize",
+    "export": "Export",
+    "govern": "Govern",
+    "collaborate": "Collaborate",
+    "components": {
+        "title": "Components",
+        "display": "hidden"
+    }
+}

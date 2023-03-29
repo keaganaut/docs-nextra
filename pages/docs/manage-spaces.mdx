@@ -1,0 +1,12 @@
+import Image from 'next/image';
+import Link from "next/link";
+
+# Spaces
+
+Spaces are the isolated containers where your Y42 projects happen and all data transformation and processing takes place. You can have multiple spaces in your Y42 Organisation and you are free to create and delete them at your discretion.
+
+<Image src="/asset_library/concept_spaces.png" alt="Multiple Spaces in one Y42 Organization" width={1200} height={1200} />
+
+Every space is connected to a **GitLab** repository storing the files defining your solution, to a **Data Warehouse** hosting the tables used in that space as well as to an **Object storage** to allow for data staging processing.
+
+We do support connecting to either your [Google Big Query](/docs/manage-spaces/create-space-bigquery) or your [Snowflake](/docs/manage-spaces/create-space-snowflake) based Data Warehouse set-up.

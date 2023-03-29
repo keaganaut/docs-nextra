@@ -1,0 +1,73 @@
+import { Steps, Callout } from "nextra-theme-docs";
+import Image from 'next/image';
+import Link from "next/link";
+
+# Configure AWS for Snowflake Spaces
+
+<Steps className="">
+### Create AWS Account 
+If you don't already have an account, sign-up for a [Amazon Web Services Account](https://aws.amazon.com/free/) and make sure to also [set-up billing](https://aws.amazon.com/aws-cost-management/aws-billing/) for it.
+
+### Create a technical user
+Go to the [AWS IAM service](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users) and create a new user. The user needs to be enabled for programmatic access.
+
+### Add necessary permissons 
+With in the new users configuration detail page, click on "Add permissions / Add inline policy".
+
+<Image src="/asset_library/create_snowflake_space_configure_aws_user.png" alt="Create AWS user" width={1200} height={1200} />
+
+In the next screen, select **JSON** and copy-paste the following permissions set into it. 
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:PutBucketCORS",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObjectVersion",
+                "s3:DeleteObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:::*/*"
+        }
+    ]
+}
+```
+When you're done, click "Review Policy" and confirm it on the subsequent dialog screen.
+<Image src="/asset_library/create_snowflake_space_configure_aws_permissions_set.png" alt="Create AWS Permissions set" width={1200} height={1200} />
+
+
+### Create Access Key
+In the "Security Credentials" tabs, select "Create access key". 
+
+<Image src="/asset_library/create_snowflake_space_configure_aws_access_key.png" alt="Configure AWS access key" width={1200} height={1200} />
+
+When prompted, select "Command Line Interface (CLI)" and confirm this choice.
+<Image src="/asset_library/create_snowflake_space_configure_aws_cli_config.png" alt="Configure AWS access key" width={1200} height={1200} />
+
+After confirming this on the next screen by clicking "Create access key", AWS will allow you to save the **access key id** and **secret key**. This is possible only once. Make sure to store in a secure location. 
+<Image src="/asset_library/create_snowflake_space_configure_aws_key_confirm.png" alt="Configure AWS access key" width={1200} height={1200} />
+
+<Image src="/asset_library/create_snowflake_space_configure_aws_key_store.png" alt="Store the AWS access key id and secret" width={1200} height={1200} />
+
+### Done
+Now you are ready to proceed creating your [Snowflake Space](/docs/manage-spaces/create-space-snowflake) in Y42.
+</Steps>
+
+
