@@ -17,20 +17,22 @@ export const Footer = () => {
           </div>
           <div className="flex flex-row space-x-5">
             <a href="/" className="">
-              <SlackBwIcon className="h-5 w-5  fill-gray-500 dark:fill-gray-1200 opacity-60 hover:opacity-100 transition" />
+              <SlackBwIcon className="h-5 w-5  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
             </a>
             <a href="/" className="">
-              <LinkedInIcon className="h-5 w-5  fill-gray-500 dark:fill-gray-1200 opacity-60 hover:opacity-100 transition" />
+              <LinkedInIcon className="h-5 w-5  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
             </a>
             <a href="/" className="">
-              <YoutubeIcon className="h-5 w-5  fill-gray-500 dark:fill-gray-1200 opacity-60 hover:opacity-100 transition" />
+              <YoutubeIcon className="h-5 w-5  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
             </a>
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8 mr-16 mt-8 lg:mt-0">
           <div className="">
-            <h6 className="text-sm">Product</h6>
-            <ul className="mt-4 space-y-2 text-sm">
+            <h6 className="text-sm text-primary invert dark:invert-0">
+              Product
+            </h6>
+            <ul className="mt-4 space-y-2 text-sm text-secondary invert dark:invert-0">
               <li>
                 <a href="/">Integrate</a>
               </li>
@@ -52,8 +54,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <h6 className="text-sm">Solutions</h6>
-            <ul className="mt-4 space-y-2 text-sm">
+            <h6 className="text-sm text-primary invert dark:invert-0">
+              Solutions
+            </h6>
+            <ul className="mt-4 space-y-2 text-sm text-secondary invert dark:invert-0">
               <li>
                 <a href="/">E-commerce</a>
               </li>
@@ -66,8 +70,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <h6 className="text-sm">Learn more</h6>
-            <ul className="mt-4 space-y-2 text-sm">
+            <h6 className="text-sm text-primary invert dark:invert-0">
+              Learn more
+            </h6>
+            <ul className="mt-4 space-y-2 text-sm text-secondary invert dark:invert-0">
               <li>
                 <a href="/">Guides</a>
               </li>
@@ -80,8 +86,10 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <h6 className="text-sm">Company</h6>
-            <ul className="mt-4 space-y-2 text-sm">
+            <h6 className="text-sm text-primary invert dark:invert-0">
+              Company
+            </h6>
+            <ul className="mt-4 space-y-2 text-sm text-secondary invert dark:invert-0">
               <li>
                 <a href="/">About us</a>
               </li>
@@ -96,7 +104,9 @@ export const Footer = () => {
         </div>
       </div>
       <section className="flex flex-row justify-between items-center mt-12">
-        <span className="text-sm">Copyright lorem ipsum</span>
+        <span className="text-sm text-secondary invert dark:invert-0">
+          Copyright lorem ipsum
+        </span>
         <Status />
       </section>
     </footer>
