@@ -1,0 +1,56 @@
+import Image from 'next/image'
+
+# Asset Sidebar
+
+The asset sidebar is a reusable component available throughout the entire Y42 app. Its goal is to provide you with consistent context about all the assets available in the platform.
+The sidebar consists of a set of tabs, each providing you with handy functionalities.
+
+## Summary
+
+This tab shows the most relevant information about the selected asset. The pieces of information shown depend on the [asset type]( /docs/getting-started/core-concepts/data-assets) of the selected asset and can contain e.g. Asset Status, Description, Tags, Table Context, Output tables, Widget summary, Widget preview, Alert definition (details see below).
+
+
+<Image src="/asset_library/asset-sidebar-summary.png" alt="Asset Sidebar - Summary" width={300} height={300} />
+
+
+## Metadata
+
+This tab holds the consistent metadata fields recorded for all assets in the platform, plus some additional information about version control. The fields displayed are:
+
+- Asset Status: A human-defined categorization of whether the asset is ready for use. Asset owners or experts are responsible for curating the status to empower other members of their organization to work with data productively
+- Description: A description of the data asset's goals and characteristics that helps identify it amongst other resources and provides data consumers with relevant context
+- Tags: Identifiers that help with the categorization and discoverability of data assets
+- Asset Stewards: Individuals with obligations or rights around a specific data asset. There are three steward types:
+	- Owners: The owners of a data asset are responsible for the asset being discoverable (They must populate the metadata) and usable (The asset must meet organizational quality standards, fulfills any applied contracts and freshness requirements, and the status reflects the asset usability accurately).
+	- Experts: The experts holding the domain expertise about the information represented by the data asset
+	- Watchers: Stakeholders impacted in indirect ways by the data asset, and that, therefore, must be kept in the loop about the ongoing conversation, status, and other metadata changes
+- Version Control: Offers information about the version control of the data asset.
+	- Created: Displays who and when first created the data asset
+	- Last Updated: Displays who was the last person to modify the data asset and when did that happen
+	- File history: Opens a window that allows browsing the past history of the files defining a given data asset
+
+<Image src="/asset_library/asset-sidebar-metadata.png" alt="Asset Sidebar - Metadata" width={300} height={300} />
+
+## Comments
+
+This tab displays the ongoing conversation about the specific data asset. In the comments, you can tag other Y42 users belonging to the current organization, edit and delete your past comments, or even resolve the entire conversation.
+Resolve implies permanently deleting the thread of messages attached to an asset, so use this function carefully.
+
+<Image src="/asset_library/asset-sidebar-comments.png" alt="Asset Sidebar - Comments" width={300} height={300} />
+
+## Access Control
+Allows you to fine grain control who of your users can access this asset and with which role.
+
+<Image src="/asset_library/asset-sidebar-acl.png" alt="Asset Sidebar - Access Controll" width={300} height={300} />
+
+## Lineage
+
+This tab is equivalent to a flat list view of the 'Peak lineage', allowing you to see in a glimpse all the downstream and upstream dependencies of the selected data asset
+
+<Image src="/asset_library/asset-sidebar-dependencies.png" alt="Asset Sidebar - Summary" width={300} height={300} />
+
+## Delete Asset
+
+This tab allows you to delete the selected data asset entirely and summarizes what downstream and upstream dependencies will be affected.
+
+<Image src="/asset_library/asset-sidebar-delete.png" alt="Asset Sidebar - Delete" width={300} height={300} />

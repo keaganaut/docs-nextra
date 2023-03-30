@@ -1,0 +1,69 @@
+# Types of tests
+
+There are 5 types of tests, which you can combine to make your data quality bulletproof.
+
+## Schema tests
+First you can do is add the schema of the tests, which sets the first conditions under which the actual tests are build.
+
+This will be your first mandatory test!
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/spH2UPBRwfAYZa_pFq1JnSGi.png)
+
+In the schema you can:
+
+- Add/Remove the Columns you will test further.
+- Select the Column type (By default it will be mapped the actual column type).
+- Select if you accept null values of them
+- Select if these columns are required or not (Should or should not exist in the actual output table)
+- Allow new columns to be added in the output table or not.
+
+**Note:** You can change this setup anytime later.
+
+## Column tests
+
+You can add as many validations for columns as you want based on the column values.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/8UJ4-ipZRgqfY6rMc6yElzPA.png)
+
+If the all the data is true the test will pass.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/i9mnX8CYmL-DAGmySKypfHs8.png)
+
+If any of the data is false (and the threshold is 0) test will fail.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/VqVqf_W4bX8vH2BGzbDtF5P-.png)
+
+You can even add an absolute or relative threshold of the result.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/DNb0mpITgrDgcUJBC5aXfotL.png)
+
+For example in the failed example there are 75 unexpected values.
+
+if we add an absolute 75 threshold value the test will pass, stating the number of failed rows.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/EhuDoVL5Qx1WHM6p5Z8tuKVy.png)
+
+**Note:** To make the test pass any time, you can make the Error threshold type Relative and the value 1.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/fHVCQS1ANdyecFliVE1-Se48.png)
+
+## Row number Drift
+
+It sets a minimal and an upper threshold number of rows.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/lP5chcEEcaf6z2K786QJqLXo.png)
+
+If the number of rows is less then the threshold the test will fail.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/Ki1Mk_xf86mjndPWw1U3zi6H.png)
+
+The threshold can be Relative or Absolute.
+
+**Note:** To make the test pass any time, you can make the Error threshold type Relative and the value 1
+
+## Unique Key
+
+It checks whether a column has unique values or not
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/aZlF5FoWvwIEycaKbXq1F8X2.png)
+
+If the column does not have unique values it will display how many are duplicated and the test will fail. If every value is unique it will pass.
+
+You can also check if you accept Null values or not.
+
+## Low-Code Condition
+
+Works similar as the Column tests, the only difference being that you can write the conditions with low code rather than with the UI.
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/Ug23TGZaVMu6rwcFF7n7i9RH.png)
+
+![alt text](https://slabstatic.com/prod/uploads/m2v4jwak/posts/images/Op6kbvJeMFJ7nn_s6X95rra4.png)
