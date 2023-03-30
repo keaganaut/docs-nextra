@@ -17,9 +17,10 @@ export const Status = () => {
     <a
       href="https://y42status.com/"
       target="_blank"
-      className="flex flex-row border border-gray-300 px-3 py-1 rounded-lg hover:bg-gray-100/70 hover:border-gray-500 text-sm"
+      className="flex flex-row border border-gray-900 dark:border-gray-300 transition px-3 py-1 items-center rounded-lg dark:hover:bg-gray-100/70 dark:hover:border-gray-400 text-sm"
     >
-      Status: <div className="text-green-700">{description}</div>
+      Status: <span className="w-2 h-2 m-2 bg-green-700 rounded-full"></span>
+      <div className="text-green-700">{description}</div>
     </a>
   );
 };
