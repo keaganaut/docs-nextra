@@ -11,11 +11,11 @@ export const Footer = () => {
         {/* <div className="col-span-1 col-end-4 bg-[black] flex flex-col justify-center items-center p-4">
         <Status />
       </div> */}
-        <div className="flex flex-row md:flex-col justify-between w-1/3">
+        <div className="flex flex-row lg:flex-col lg:w-auto w-full justify-between mr-auto">
           <div className="">
             <Y42Logo height={16} />
           </div>
-          <div className="flex flex-row items-center space-x-5">
+          <div className="flex flex-row space-x-5">
             <a href="/" className="">
               <SlackBwIcon className="h-5 w-5  fill-gray-500 dark:fill-gray-1200 opacity-60 hover:opacity-100 transition" />
             </a>
@@ -27,7 +27,7 @@ export const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8 mr-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8 mr-16 mt-8 lg:mt-0">
           <div className="">
             <h6 className="text-sm">Product</h6>
             <ul className="mt-4 space-y-2 text-sm">
@@ -95,8 +95,8 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-row justify-between mt-12">
-        <span className="m-2 text-sm">Copyright lorem ipsum</span>
+      <section className="flex flex-row justify-between items-center mt-12">
+        <span className="text-sm">Copyright lorem ipsum</span>
         <Status />
       </section>
     </footer>
