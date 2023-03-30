@@ -98,11 +98,11 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-col lg:flex-row flex-wrap justify-between items-center lg:items-baseline mt-16 space-y-4">
-        <div className="text-sm text-secondary invert dark:invert-0 order-last lg:order-1">
+      <section className="flex flex-col lg:flex-row flex-wrap justify-between items-center lg:items-baseline mt-16">
+        <div className="text-sm text-secondary invert dark:invert-0 order-last lg:order-1 mt-4">
           © 2023 Y42. All rights reserved
         </div>
-        <div className="order-first lg:order-2 ">
+        <div className="order-first lg:order-2 mb-4">
           <Status />
         </div>
         <div className="text-sm text-secondary invert dark:invert-0 space-x-8 lg:order-last">
