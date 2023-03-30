@@ -1,0 +1,78 @@
+import Image from 'next/image';
+
+{/* TODO: ADD LINKS */}
+
+# How to work with Date Filters
+
+This article will run through the different date and time filters and show you how you can use them to present your data with different granularity in Y42. All filters are available in the Visualisation section.
+
+## Canvas vs. widget vs. field filters
+
+### Manage canvas filters
+In some cases, you would need to filter all widgets by a certain date or time. This may be helpful, for example, when all widgets should show only information about the last 7 days. You can save those filters to apply them on a constant basis throughout your data analysis.
+
+In order to add a canvas filter, select a filter from the canvas sidebar and place it on a dashboard tab.
+
+<Image src="/asset_library/how_to_date_canvas_filters.gif" width={1200} height={1200} />
+
+### Manage widget filters
+
+On a widget level, you can also set particular filters by dataset variables. To do so, you can drag and drop date or time variables from the dimensions field and then apply a filter and choose parameters.
+
+<Image src="/asset_library/how_to_date_widget_filters.gif" width={1200} height={1200} />
+
+### Manage field filters
+
+Individual measures or dimensions within a visualization can also be filtered. This can be done by adding a filter from the drop-down settings for the individual field.
+
+<Image src="/asset_library/how_to_date_field_filters.gif" width={1200} height={1200} />
+
+## Settings of date and time filters
+When you decided to filter your data by a certain date or time, there are two options you can select: Absolute Date or Relative Date.
+
+### Absolute Date
+Absolute Date displays your data filtered by the exact date and time. Here you can choose predefined time spans such as Last Month, This Month, Yesterday, Today etc. or you can adjust the dates to your liking.
+
+<Image src="/asset_library/how_to_date_absolute.png" width={1200} height={1200} />
+
+### Relative Date
+
+__Relative Date__ does not offer specific dates, but time ranges you can define for specific Types like Hours, Days, Weeks, ISO Weeks, Months or Years.
+
+Examples of time ranges that can be applied:
+
+#### This Month:
+<Image src="/asset_library/how_to_date_relative_this_month.png" width={1200} height={1200} />
+
+#### Last Month:
+<Image src="/asset_library/how_to_date_relative_last_month.png" width={1200} height={1200} />
+
+#### Last 12 Months:
+<Image src="/asset_library/how_to_date_relative_last_twelve_months.png" width={1200} height={1200} />
+
+### Weeks & ISO Weeks
+
+We define weeks and ISO weeks in the following way:
+
+    - Week: Number of the date in the range [0, 53]. Weeks begin with Sunday, and dates prior to the first Sunday of the year are in week 0.
+    - ISO week: Returns the ISO 8601 week number. ISO Weeks begin on Monday. Return values are in the range [1, 53]. The first ISO week of each ISO year begins on the Monday before the first Thursday of the Gregorian calendar year.
+
+This is the same as the definition currently used by Google BigQuery.
+
+### Operators
+The time ranges can be adjusted using Operators. There are six Operators available in the dropdown list of the Date and Time Filters:
+
+    * __Is between:__ with both endpoints inclusive
+    * __Is before:__ means smaller than 
+    * __Is after:__ means greater than 
+    * __Is empty__
+    * __Is not empty__
+    * __Is equal__
+
+If you'd like to learn more about the different date and time data types and the most common functions you can use to work with them in Y42 modelling, take a look at this article here.
+
+
+
+
+
+

@@ -1,4 +1,4 @@
 {
-    "export-stub": "export stub",
-    "another-export-stub": "another export stub"
+    "setup-export": "Setting up Data Exports",
+    "authentication": "Authentication"
 }

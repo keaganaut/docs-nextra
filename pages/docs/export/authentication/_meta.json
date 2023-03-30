@@ -1,0 +1,5 @@
+{
+    "google-sheets-export": "Google Sheets",
+    "amazon-s3-export": "Amazon S3",
+    "google-bq-export": "Google BigQuery"
+}
