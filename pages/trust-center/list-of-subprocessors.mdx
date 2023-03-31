@@ -1,0 +1,26 @@
+import { TranscludeSelector } from "components/TranscludeSelector";
+import { promises as fs } from "fs";
+import { join, parse } from "path";
+// import Foo from "pages/trust-center/_subprocessors/2023-15-03.mdx";
+
+Last updated: 2023-31-03
+
+<TranscludeSelector pages={props.pages} />
+
+export async function getStaticProps() {
+  const contentPath = join(
+    process.cwd(),
+    "/pages/trust-center/_subprocessors/"
+  );
+  const files = await fs.readdir(contentPath);
+
+const pages = files
+.filter((item) => parse(item).ext === ".mdx" || parse(item).ext === ".md")
+.sort()
+.reverse();
+// .map((item) => parse(item).name)
+
+return {
+props: { pages: pages },
+};
+}
