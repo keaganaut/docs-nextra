@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     colors: {
+      primary: "rgba(255, 255, 255, 0.94)",
+      secondary: "rgba(255, 255, 255, 0.64)",
+      disabled: "rgba(255, 255, 255, 0.32)",
       gray: {
         100: "#1a1c20",
         200: "#24262c",
