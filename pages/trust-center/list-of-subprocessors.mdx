@@ -1,7 +1,6 @@
 import { TranscludeSelector } from "components/TranscludeSelector";
 import { promises as fs } from "fs";
 import { join, parse } from "path";
-// import Foo from "pages/trust-center/_subprocessors/2023-15-03.mdx";
 
 <TranscludeSelector pages={props.pages} />
 
@@ -16,7 +15,6 @@ const pages = files
 .filter((item) => parse(item).ext === ".mdx" || parse(item).ext === ".md")
 .sort()
 .reverse();
-// .map((item) => parse(item).name)
 
 return {
 props: { pages: pages },
