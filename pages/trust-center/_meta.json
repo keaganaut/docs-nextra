@@ -1,6 +1,9 @@
 {
     "index": "Overview",
-    "list-of-subprocessors": "List of subprocessors",
+    "list-of-subprocessors": {
+        "title": "List of subprocessors",
+        "theme": {}
+    },
     "_subprocessors": {
         "title": "_subprocessors",
         "display": "hidden"
