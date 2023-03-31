@@ -3,7 +3,7 @@ interface FontAwesomeIconProps {
   fill: string;
   width: number;
   height: number;
-  props: any;
+  className?: string;
 }
 
 export const FontAwesomeIcon = ({

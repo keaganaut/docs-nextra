@@ -1,0 +1,22 @@
+import { SubprocessorsSelector } from "components/SubprocessorsSelector";
+import { promises as fs } from "fs";
+import { join, parse } from "path";
+
+<SubprocessorsSelector pages={props.pages} />
+
+export async function getStaticProps() {
+  const contentPath = join(
+    process.cwd(),
+    "/pages/trust-center/_subprocessors/"
+  );
+  const files = await fs.readdir(contentPath);
+
+const pages = files
+.filter((item) => parse(item).ext === ".mdx" || parse(item).ext === ".md")
+.sort()
+.reverse();
+
+return {
+props: { pages: pages },
+};
+}
