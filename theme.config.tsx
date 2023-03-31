@@ -1,4 +1,5 @@
 import { DocsThemeConfig } from "nextra-theme-docs";
+import { Footer } from "./components/footer/Footer";
 import Y42Logo from "./components/logos/Y42Logo";
 
 const config: DocsThemeConfig = {
@@ -10,7 +11,8 @@ const config: DocsThemeConfig = {
 
   docsRepositoryBase: "https://github.com/keaganaut/docs-nextra/tree/dev",
   footer: {
-    text: "Docs MVP using Nextra",
+    // text: "Docs MVP using Nextra",
+    component: <Footer />,
   },
   primaryHue: 269,
   sidebar: {

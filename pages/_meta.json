@@ -9,6 +9,11 @@
         "type": "page",
         "display": "hidden"
     },
+    "trust-center": {
+        "title": "Trust center",
+        "type": "page",
+        "display": "hidden"
+    },
     "tutorials": {
         "title": "Tutorials",
         "type": "page"
