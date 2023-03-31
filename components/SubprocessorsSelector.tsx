@@ -3,11 +3,13 @@ import { parse } from "path";
 import { useState } from "react";
 import { FontAwesomeIcon } from "./icons/FontAwesomeIcon";
 
-interface TranscludeSelectorProps {
+interface SubprocessorsSelectorProps {
   pages: string[];
 }
 
-export const TranscludeSelector = ({ pages }: TranscludeSelectorProps) => {
+export const SubprocessorsSelector = ({
+  pages,
+}: SubprocessorsSelectorProps) => {
   const [selected, setSelected] = useState<string>(pages[0]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 

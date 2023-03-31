@@ -2,7 +2,9 @@
     "index": "Overview",
     "list-of-subprocessors": {
         "title": "List of subprocessors",
-        "theme": {}
+        "theme": {
+            "sidebar": true
+        }
     },
     "_subprocessors": {
         "title": "_subprocessors",

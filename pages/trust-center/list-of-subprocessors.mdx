@@ -1,8 +1,8 @@
-import { TranscludeSelector } from "components/TranscludeSelector";
+import { SubprocessorsSelector } from "components/SubprocessorsSelector";
 import { promises as fs } from "fs";
 import { join, parse } from "path";
 
-<TranscludeSelector pages={props.pages} />
+<SubprocessorsSelector pages={props.pages} />
 
 export async function getStaticProps() {
   const contentPath = join(
