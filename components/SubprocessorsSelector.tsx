@@ -68,7 +68,10 @@ export const SubprocessorsSelector = ({
                   <li
                     className="flex items-center py-2 px-4 cursor-pointer hover:bg-gray-1200/40 dark:hover:bg-gray-300"
                     key={index}
-                    onClick={() => setSelected(page)}
+                    onClick={() => {
+                      setSelected(page);
+                      setIsOpen(false);
+                    }}
                   >
                     {parse(page).name}
                     {index === 0 ? (
