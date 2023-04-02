@@ -10,6 +10,7 @@ interface SubprocessorsSelectorProps {
 export const SubprocessorsSelector = ({
   pages,
 }: SubprocessorsSelectorProps) => {
+  //TODO: error handling if content directory is empty
   const [selected, setSelected] = useState<string>(pages[0]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -18,7 +19,7 @@ export const SubprocessorsSelector = ({
   };
 
   const TranscludedContent = dynamic(
-    () => import(`pages/trust-center/_subprocessors/${selected}`),
+    () => import(`pages/legal/_subprocessors-updates/${selected}`),
     {
       ssr: false,
     }

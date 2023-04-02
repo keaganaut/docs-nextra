@@ -9,8 +9,8 @@
         "type": "page",
         "display": "hidden"
     },
-    "trust-center": {
-        "title": "Trust center",
+    "legal": {
+        "title": "Legal",
         "type": "page",
         "display": "hidden"
     },

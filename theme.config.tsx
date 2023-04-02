@@ -11,7 +11,6 @@ const config: DocsThemeConfig = {
 
   docsRepositoryBase: "https://github.com/keaganaut/docs-nextra/tree/dev",
   footer: {
-    // text: "Docs MVP using Nextra",
     component: <Footer />,
   },
   primaryHue: 269,
