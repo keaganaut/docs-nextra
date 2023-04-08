@@ -1,6 +1,6 @@
-import { LinkedInIcon, SlackBwIcon, YoutubeIcon } from "../icons/third-party";
-import Y42Logo from "../logos/Y42Logo";
-import { Status } from "./Status";
+import { StatusBadge } from "./StatusBadge";
+import Y42Logo from "./Y42Logo";
+import { LinkedInIcon, SlackBwIcon, YoutubeIcon } from "./icons/third-party";
 
 export const Footer = () => {
   return (
@@ -103,7 +103,7 @@ export const Footer = () => {
           © 2023 Y42. All rights reserved
         </div>
         <div className="order-first mb-4 lg:order-2">
-          <Status />
+          <StatusBadge />
         </div>
         <div className="space-x-8 text-sm text-secondary invert dark:invert-0 lg:order-last">
           <a href="/">Imprint</a>

@@ -1,45 +1,45 @@
-import React, { useState, useCallback, createContext, useContext } from 'react'
-import cn from 'clsx'
-import type { ReactElement } from 'react'
+import cn from "clsx";
+import type { ReactElement } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 
-const ctx = createContext(0)
+const ctx = createContext(0);
 
-export const { Provider, Consumer } = ctx
+export const { Provider, Consumer } = ctx;
 
 export function useIndent() {
-  return useContext(ctx) || 0
+  return useContext(ctx) || 0;
 }
 
-export default ctx
+export default ctx;
 
 interface FolderProps {
-  name: string
-  label?: ReactElement
-  open?: boolean
-  defaultOpen?: boolean
-  onToggle?: (open: boolean) => void
-  children: ReactElement | ReactElement[]
+  name: string;
+  label?: ReactElement;
+  open?: boolean;
+  defaultOpen?: boolean;
+  onToggle?: (open: boolean) => void;
+  children: ReactElement | ReactElement[];
 }
 
 interface FileProps {
-  name: string
-  label?: ReactElement
-  active?: boolean
-  children: ReactElement | ReactElement[]
+  name: string;
+  label?: ReactElement;
+  active?: boolean;
+  children: ReactElement | ReactElement[];
 }
 
 const Tree: React.FC<{
-  children: ReactElement | ReactElement[]
+  children: ReactElement | ReactElement[];
 }> = ({ children }) => (
   <div className="mt-6 select-none text-sm text-gray-800 dark:text-gray-300">
-    <div className="inline-flex rounded-lg border px-4 py-2 dark:border-neutral-800">
+    <div className="dark:border-neutral-800 inline-flex rounded-lg border px-4 py-2">
       {children}
     </div>
   </div>
-)
+);
 
 function Ident() {
-  const indent = useIndent()
+  const indent = useIndent();
 
   return (
     <>
@@ -47,24 +47,24 @@ function Ident() {
         <span className="inline-block w-5" key={i} />
       ))}
     </>
-  )
+  );
 }
 
 const Folder: React.FC<FolderProps> = React.memo(
   ({ label, name, open, children, defaultOpen, onToggle }) => {
-    const indent = useIndent()
+    const indent = useIndent();
 
-    const [isOpen, setIsOpen] = useState(defaultOpen || false)
+    const [isOpen, setIsOpen] = useState(defaultOpen || false);
 
     const toggle = useCallback(() => {
-      onToggle?.(!isOpen)
-      setIsOpen(!isOpen)
-    }, [isOpen, onToggle])
+      onToggle?.(!isOpen);
+      setIsOpen(!isOpen);
+    }, [isOpen, onToggle]);
 
-    const isFolderOpen = open === undefined ? isOpen : open
+    const isFolderOpen = open === undefined ? isOpen : open;
 
     return (
-      <li className={cn('flex list-none flex-col', { ['']: isFolderOpen })}>
+      <li className={cn("flex list-none flex-col", { [""]: isFolderOpen })}>
         <a
           onClick={toggle}
           title={name}
@@ -104,19 +104,19 @@ const Folder: React.FC<FolderProps> = React.memo(
           </ul>
         ) : null}
       </li>
-    )
+    );
   }
-)
+);
 
-Folder.displayName = 'Folder'
+Folder.displayName = "Folder";
 
 const File: React.FC<FileProps> = React.memo(
   ({ label, name, active, ...props }) => {
     return (
       <li
         className={cn(
-          'flex list-none',
-          active && 'nx-text-primary-600 contrast-more:nx-underline'
+          "flex list-none",
+          active && "nx-text-primary-600 contrast-more:nx-underline"
         )}
       >
         <a {...props} className="inline-flex cursor-default items-center py-1">
@@ -136,10 +136,10 @@ const File: React.FC<FileProps> = React.memo(
           <span className="ml-1">{label ?? name}</span>
         </a>
       </li>
-    )
+    );
   }
-)
+);
 
-File.displayName = 'File'
+File.displayName = "File";
 
-export { Tree, Folder, File }
+export { Tree, Folder, File };

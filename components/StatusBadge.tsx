@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const Status = () => {
+export const StatusBadge = () => {
   const [description, setDescription] = useState<string | null>(null);
   const [indicator, setIndicator] = useState<string | null>(null);
 
