@@ -1,14 +1,14 @@
+import "@code-hike/mdx/dist/index.css";
 import { Analytics } from "@vercel/analytics/react";
 import { AppProps } from "next/app";
-import "../styles/globals.css";
-import "@code-hike/mdx/dist/index.css";
 import "../styles/custom-ch.css";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Component {...pageProps} />
-      <Analytics />
+      <Analytics debug={false} />
     </>
   );
 }
