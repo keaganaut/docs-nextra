@@ -13,6 +13,8 @@ export const Status = () => {
       });
   }, []);
 
+  if (!indicator) return <></>;
+
   return (
     <a
       href="https://y42status.com/"
@@ -22,6 +24,7 @@ export const Status = () => {
       <span className="text-sm text-secondary invert dark:invert-0">
         Status:
       </span>
+
       <span
         className={`w-2 h-2 m-2 ${
           indicator == "none"
@@ -33,7 +36,6 @@ export const Status = () => {
       ></span>
 
       {/* https://y42status.com/api#summary endpoint includes an indicator - one of none, minor, major, or critical */}
-      {/* <div className={`text-sm ${getIndicatorColor(indicator)}`}> */}
       <div
         className={`text-sm ${
           indicator == "none"
