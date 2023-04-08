@@ -5,16 +5,16 @@ import { useRef, useState } from "react";
 
 export const Hero = ({ ...props }) => {
   return (
-    <div className="relative hover:border-0 my-4 w-full h-56">
+    <div className="relative my-4 h-56 w-full hover:border-0">
       <Canvas
-        className="border border-gray-200 rounded-xl"
+        className="rounded-xl border border-gray-200"
         camera={{ position: [0, 0, 1] }}
         {...props}
       >
         <Stars />
       </Canvas>
-      <div className="absolute inset-y-10 inset-x-10 w-full h-full">
-        <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-pink-400 to-red-600">
+      <div className="absolute inset-y-10 inset-x-10 h-full w-full">
+        <div className="text-transparent bg-gradient-to-br from-pink-400 to-red-600 bg-clip-text text-3xl font-bold">
           Get started
         </div>
       </div>

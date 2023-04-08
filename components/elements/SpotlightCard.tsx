@@ -24,27 +24,27 @@ const SpotlightCards = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-8 border-t mt-4 pt-10 border-zinc-900/5">
+    <div className="border-zinc-900/5 mt-4 grid grid-cols-1 gap-8 border-t pt-10">
       <div
-        className="_card group relative flex rounded-xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5"
+        className="_card bg-zinc-50 hover:shadow-zinc-900/5 group relative flex rounded-xl transition-shadow hover:shadow-md"
         // onMouseMove={(e) => handleMouseMove(e)}
       >
         <div className="pointer-events-none">
-          <div className="_effect_one absolute inset-0 rounded-xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428] radial-gradient-mask"></div>
+          <div className="_effect_one radial-gradient-mask absolute inset-0 rounded-xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"></div>
 
           {/* TODO: use mouseposition to change radial gradient  */}
           {/* https://protocol.tailwindui.com/ */}
           {/* https://stackoverflow.com/questions/72533318/change-the-style-with-the-mousemove-event-listener-in-reactjs */}
           {/* https://www.30secondsofcode.org/css/s/mouse-cursor-gradient-tracking */}
           {/* https://www.pluralsight.com/guides/inline-styling-with-react */}
-          <div className="_effect_two absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100 radial-gradient-mask"></div>
+          <div className="_effect_two radial-gradient-mask absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"></div>
         </div>
         <div className="_content relative rounded-xl px-4 pt-16 pb-4">
-          <div className="_icon flex h-7 w-7 iterms center justify-center">
+          <div className="_icon iterms center flex h-7 w-7 justify-center">
             <svg
               viewBox="0 0 20 20"
               aria-hidden="true"
-              className="h-5 w-5 fill-zinc-700/10 stroke-zinc-700 transition-colors duration-300 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-emerald-300/10 dark:group-hover:stroke-emerald-400"
+              className="fill-zinc-700/10 stroke-zinc-700 group-hover:stroke-zinc-900 dark:fill-white/10 dark:stroke-zinc-400 dark:group-hover:fill-emerald-300/10 dark:group-hover:stroke-emerald-400 h-5 w-5 transition-colors duration-300"
             >
               <path d="M10 .5a9.5 9.5 0 0 1 5.598 17.177C14.466 15.177 12.383 13.5 10 13.5s-4.466 1.677-5.598 4.177A9.5 9.5 0 0 1 10 .5ZM12.5 8a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"></path>
               <path
@@ -57,10 +57,10 @@ const SpotlightCards = () => {
               ></path>
             </svg>
           </div>
-          <h3 className="mt-4 text-sm font-semibold leading-7 text-sinc-900">
+          <h3 className="text-sinc-900 mt-4 text-sm font-semibold leading-7">
             Connectors
           </h3>
-          <p className="mt-1 text-sm text-zinc-600">
+          <p className="text-zinc-600 mt-1 text-sm">
             {" "}
             Learn about the connectors available that you can use to ingest data
             into your Data Warehouse.

@@ -1,18 +1,21 @@
 import { Steps, Callout } from "nextra-theme-docs";
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
 
 # Creating a Y42 Space on Snowflake
+
 Here we provide a quick overview of the necessary steps to create a Y42 space on Snowflake.
 Since we support Snowflake on AWS or Azure, so you'll also find the necessary information on how to configure these.
 
 <Callout type="info" emoji="ℹ️">
-  As a prerequise you need to have a [Y42 organization set-up]( /docs/organization-setup/create-an-organization) that you have Adminstrator rights over.
+  As a prerequise you need to have a [Y42 organization set-up](
+  /docs/organization-setup/create-an-organization) that you have Adminstrator
+  rights over.
 </Callout>
 
 ## Configure Cloud Object Storage
-Please follow the instructions for [AWS](create-space-snowflake/configure-aws) or [Azure](create-space-snowflake/configure-azure) depending on what platform provider you want to use with your Y42 Snowflake Space.
 
+Please follow the instructions for [AWS](create-space-snowflake/configure-aws) or [Azure](create-space-snowflake/configure-azure) depending on what platform provider you want to use with your Y42 Snowflake Space.
 
 ## Set-Up Snowflake Account
 
@@ -22,12 +25,17 @@ In order to connect Snowflake with Y42, you will need to have a Snowflake Accoun
 ### Create Snowflake Account _(optional, if required)_
 - Sign-up for a Snowflake Account (e.g. via [AWS Marketplace](https://console.aws.amazon.com/marketplace/home?region=us-east-1#/search!mpSearch/search?text=Snowflake))
 
-<Image src="/asset_library/create_snowflake_account_via_aws_marketplace.png" alt="Create new Snowflake account via AWS Marketplace" width={1200} height={1200} />
+<Image
+  src="/asset_library/create_snowflake_account_via_aws_marketplace.png"
+  alt="Create new Snowflake account via AWS Marketplace"
+  width={1200}
+  height={1200}
+/>
 
 See the [Snowflake documentation](https://docs.snowflake.com/user-guide/admin-trial-account) to read more.
 
-
 ### Prepare Snowflake to house your Y42 DWH
+
 You'll need to create a new Database and Warehouse as well as create a new user/role and grant it the necessary permissions (create schema, ownership of db, usage of warehouse).
 For your convenience we prepared this code snippet that you can run on your Snowflake instance:
 
@@ -41,7 +49,7 @@ SET MY_PASSWORD = 'please_use_a_super_secret_password';
 CREATE ROLE IDENTIFIER($MY_NAME) COMMENT = $MY_COMMENT;
 CREATE USER IDENTIFIER($MY_NAME) COMMENT = $MY_COMMENT PASSWORD = $MY_PASSWORD MUST_CHANGE_PASSWORD = false DEFAULT_ROLE = $MY_NAME;
 GRANT ROLE IDENTIFIER($MY_NAME) TO ROLE IDENTIFIER('ACCOUNTADMIN');
-GRANT ROLE IDENTIFIER($MY_NAME) TO USER IDENTIFIER($MY_NAME) 
+GRANT ROLE IDENTIFIER($MY_NAME) TO USER IDENTIFIER($MY_NAME)
 
 -- Set up database
 CREATE DATABASE IDENTIFIER($MY_NAME) COMMENT = $MY_COMMENT;
@@ -53,6 +61,7 @@ GRANT OWNERSHIP ON DATABASE IDENTIFIER($MY_NAME) TO ROLE IDENTIFIER($MY_NAME) RE
 CREATE WAREHOUSE IDENTIFIER($MY_NAME) COMMENT = $MY_COMMENT WAREHOUSE_SIZE = 'X-Small' AUTO_RESUME = true AUTO_SUSPEND = 120 WAREHOUSE_TYPE = 'STANDARD';
 GRANT USAGE ON WAREHOUSE IDENTIFIER($MY_NAME) TO ROLE IDENTIFIER($MY_NAME);'
 ```
+
 </Steps>
 
 ## Create the Space in Y42
@@ -62,44 +71,49 @@ To create a space, please start must have selected an organization. Pick the one
 <Steps className="">
 ### Click the 'Add Space' button in the organization view
 
-### Select a name for your space. 
+### Select a name for your space.
+
 If you're planning to have more than one space, try to pick a name that is descriptive of the content it will have.
 
 ### Select the Data Warehouse type "Snowflake"
 
-### Set up the Object Storage credentials 
+### Set up the Object Storage credentials
+
 Provide the Object Storage credentials (AWS or Azure)
 
 #### AWS
-| Setting        |    Example Value       |
-| :------------- | :-----------  |
-| Access Key Id  | `AKIABCDEFGHIJKLMNOPQ` |
-| Secret Access Key  | `aXgt5E/ABC1DEF2GHi3JKL4mNO5PqR6STU7VW8XY` |
-| Region  | Europe (Ireland) (eu-west-1) |
 
+| Setting           | Example Value                              |
+| :---------------- | :----------------------------------------- |
+| Access Key Id     | `AKIABCDEFGHIJKLMNOPQ`                     |
+| Secret Access Key | `aXgt5E/ABC1DEF2GHi3JKL4mNO5PqR6STU7VW8XY` |
+| Region            | Europe (Ireland) (eu-west-1)               |
 
 #### Azure Blob Storage
-| Setting        |    Example Value       |
-| :------------- | :-----------  |
-| Account Key  | `t+ABC1D+EF21GHi3J+EF23GHi3J+EF22GHi3J+KL4==` |
-| Account Name  | `y42snowflakeazureaccount` |
-| Container Name  | `y42-snowflake-container` |
 
-<Image src="/asset_library/create_snowflake_space_details.png" alt="Provide all Object Storage and DWH credentials" width={1200} height={1200} />
+| Setting        | Example Value                                 |
+| :------------- | :-------------------------------------------- |
+| Account Key    | `t+ABC1D+EF21GHi3J+EF23GHi3J+EF22GHi3J+KL4==` |
+| Account Name   | `y42snowflakeazureaccount`                    |
+| Container Name | `y42-snowflake-container`                     |
 
-### Set up the Snowflake DWH Credentials 
+<Image
+  src="/asset_library/create_snowflake_space_details.png"
+  alt="Provide all Object Storage and DWH credentials"
+  width={1200}
+  height={1200}
+/>
+
+### Set up the Snowflake DWH Credentials
+
 Provide the Snowflake Credentials as you set them up earlier.
 
-| Setting        |    Example Value       |
-| :------------- | :-----------  |
-| User  | `Y42_DATA_OPS_USER` |
+| Setting   | Example Value           |
+| :-------- | :---------------------- |
+| User      | `Y42_DATA_OPS_USER`     |
 | Password  | `super_secret_password` |
-| Account  | `ab12345.eu-central-1` |
-| Warehouse  | `Y42_DATA_OPS_WH` |
-| Database  | `Y42_DATA_OPS_DB` |
-
-
+| Account   | `ab12345.eu-central-1`  |
+| Warehouse | `Y42_DATA_OPS_WH`       |
+| Database  | `Y42_DATA_OPS_DB`       |
 
 </Steps>
-
-
