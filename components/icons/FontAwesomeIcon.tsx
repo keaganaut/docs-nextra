@@ -14,13 +14,7 @@ export const FontAwesomeIcon = ({
   ...props
 }: FontAwesomeIconProps) => {
   return (
-    <svg
-      width={width}
-      height={height}
-      fill={fill}
-      // className={fill ? "" : `fill-[#000] dark:fill-[#fff]`}
-      {...props}
-    >
+    <svg width={width} height={height} fill={fill} {...props}>
       <use href={`/fa_icons_light.svg#${symbol}`} />
     </svg>
   );

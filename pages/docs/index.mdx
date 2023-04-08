@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Cards, Card } from "components/elements/cards/Card";
+import { LargeCards, LargeCard } from "components/LargeCards";
 import {
   IntegrationIcon,
   ModelIcon,
@@ -19,57 +19,57 @@ Y42 is a fully managed Modern DataOps Cloud — purpose-built for production-rea
 
 With Y42, you can build and manage the entire lifecycle of your data warehouse activities:
 
-<Cards>
-  <Card
+<LargeCards>
+  <LargeCard
     title="Ingest"
     href="/docs/ingest"
     description="Import data into the data warehouse."
-    icon={<IntegrationIcon className="w-6 h-6" />}
+    icon={<IntegrationIcon className="h-6 w-6" />}
   />
-  <Card
+  <LargeCard
     title="Transform"
     href="/docs/transform"
     description="Convert, clean and reshape data."
-    icon={<ModelIcon className="w-6 h-6" />}
+    icon={<ModelIcon className="h-6 w-6" />}
   />
-  <Card
+  <LargeCard
     title="Publish & Visualize"
     href="/docs/publish"
     description="Create dashboards or connect to external tools."
-    icon={<VisualizationIcon className="w-6 h-6" />}
+    icon={<VisualizationIcon className="h-6 w-6" />}
   />
-  <Card
+  <LargeCard
     title="Orchestrate"
     href="/docs/orchestrate"
     description="Automate data pipeline processes."
-    icon={<OrchestrationIcon className="w-6 h-6" />}
+    icon={<OrchestrationIcon className="h-6 w-6" />}
   />
-  <Card
+  <LargeCard
     title="Govern"
     href="/docs/govern"
     description="Safeguard data & code quality, access and useability."
     icon={
       <FontAwesomeIcon
-        className="w-6 h-6 fill-orange-800 dark:fill-orange-900"
+        className="h-6 w-6 fill-orange-800 dark:fill-orange-900"
         symbol="building-shield"
       />
     }
   />
-  <Card
+  <LargeCard
     title="Collaborate"
     href="/docs/collaborate"
     description="Work data driven across business and tech teams."
     icon={
       <FontAwesomeIcon
-        className="w-6 h-6 fill-purple-400 dark:fill-purple-700"
+        className="h-6 w-6 fill-purple-400 dark:fill-purple-700"
         symbol="code-branch"
       />
     }
   />
-</Cards>
-
+</LargeCards>
 
 ## What's new?
+
 If you're a long-time Y42 user who has used the previous iteration of the platform, many things will be new to you, but much should look and feel familiar. Here's what you should be aware of, in a nutshell:
 
 - All of your integrations, models, widgets, dashboards and more are now being saved to and version-controlled in git. This may take some getting used to at first, but don't worry - you won't have to become a developer, and you won't even have to learn git if you prefer to stick to your existing workflow.

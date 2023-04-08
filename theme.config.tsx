@@ -1,6 +1,6 @@
 import { DocsThemeConfig } from "nextra-theme-docs";
-import { Footer } from "./components/footer/Footer";
-import Y42Logo from "./components/logos/Y42Logo";
+import { Footer } from "./components/Footer";
+import Y42Logo from "./components/Y42Logo";
 
 const config: DocsThemeConfig = {
   logo: <Y42Logo height={22} />,
@@ -11,7 +11,6 @@ const config: DocsThemeConfig = {
 
   docsRepositoryBase: "https://github.com/keaganaut/docs-nextra/tree/dev",
   footer: {
-    // text: "Docs MVP using Nextra",
     component: <Footer />,
   },
   primaryHue: 269,
@@ -28,7 +27,7 @@ const config: DocsThemeConfig = {
     content: null,
   },
   editLink: {
-    text: "Suggest an edit",
+    text: "Edit this page",
   },
 };
 
