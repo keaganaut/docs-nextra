@@ -30,5 +30,11 @@
     "components": {
         "title": "Components",
         "display": "hidden"
+    },
+    "redoc": {
+        "title": "Redoc",
+        "theme": {
+            "layout": "raw"
+        }
     }
 }
