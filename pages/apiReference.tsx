@@ -4,8 +4,8 @@ import { RedocStandalone } from "redoc";
 export default function ApiReference(props) {
   return (
     <div>
-      <div className="custom-nav-container sticky top-0 z-20 w-full bg-transparent">
-        <nav className="h-12 bg-[#111] p-4 border-b-[2px] border-b-[#212121] text-[#d1d1d1] text-sm flex flex-row items-center">
+      <div className="custom-nav-container bg-transparent sticky top-0 z-20 w-full">
+        <nav className="flex h-12 flex-row items-center border-b-[2px] border-b-[#212121] bg-[#111] p-4 text-sm text-[#d1d1d1]">
           <Link href="/docs"> Back to Docs </Link>
         </nav>
       </div>
