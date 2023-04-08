@@ -2,33 +2,37 @@ import { RedocStandalone } from "redoc";
 
 export const Redoc = (props) => {
   return (
-    <main className="bg-gray-100">
+    <main className="bg-[rgb(23, 24, 28)]">
       <RedocStandalone
         spec={props.spec}
         options={{
           hideLoading: true,
           theme: {
             colors: {
-              primary: { main: "#6E26EC" },
-              http: { get: "#1F8253", post: "#0C79B1", patch: "#AD5D2A" },
+              primary: { main: "rgb(23, 24, 28)" },
+              http: { get: "#209661", post: "#0f8cc6", patch: "#d74cb6" },
               responses: {
                 error: {},
               },
+
               text: {
                 primary: "#d1d1d1",
-                secondary: "#ffffff52",
+                secondary: "rgba(255, 255, 255, 0.32)",
               },
             },
             sidebar: {
-              backgroundColor: "#111",
-              textColor: "#737373",
-              activeTextColor: "#6E26EC",
+              backgroundColor: "rgb(23, 24, 28)",
+              textColor: "rgba(255, 255, 255, 0.64)",
+              activeTextColor: "rgba(255, 255, 255, 0.94)",
             },
-            rightPanel: { backgroundColor: "#2f2338", textColor: "#737373" },
-            fab: { backgroundColor: "#d1d1d1" },
+            rightPanel: {
+              backgroundColor: "rgb(23, 24, 28)",
+              textColor: "rgba(255, 255, 255, 0.64)",
+            },
+            fab: { backgroundColor: "#846dff" },
             schema: {
-              typeTitleColor: "#ffffff52",
-              requireLabelColor: "#E35755",
+              typeTitleColor: "rgba(255, 255, 255, 0.64)",
+              requireLabelColor: "#ca6a31",
             },
             typography: {
               code: { backgroundColor: "#1E2025", color: "#CC6C32" },
