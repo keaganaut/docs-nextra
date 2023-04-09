@@ -7,7 +7,7 @@ export const Redoc = (props) => {
         spec={props.spec}
         options={{
           nativeScrollbars: false,
-          disableSearch: true,
+          disableSearch: false,
           hideLoading: false,
           hideDownloadButton: true,
           hideHostname: true,
@@ -34,12 +34,12 @@ export const Redoc = (props) => {
                 secondary: "rgba(255, 255, 255, 0.32)",
               },
             },
-
             sidebar: {
               backgroundColor: "rgb(23, 24, 28)",
               textColor: "rgba(255, 255, 255, 0.64)",
               activeTextColor: "rgba(255, 255, 255, 0.94)",
             },
+            spacing: { sectionVertical: 24 },
             rightPanel: {
               backgroundColor: "rgb(23, 24, 28)",
               textColor: "rgba(255, 255, 255, 0.64)",

@@ -22,7 +22,7 @@
         "title": "API Reference",
         "type": "page",
         "theme": {
-            "layout": "raw"
+            "layout": "full"
         }
     },
     "login": {
