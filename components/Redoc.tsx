@@ -7,7 +7,7 @@ export const Redoc = (props) => {
         spec={props.spec}
         options={{
           nativeScrollbars: false,
-          //temp-fix for sticky redoc sidebar top offset
+          //tempfix for redoc sidebar top offset
           disableSearch: false,
           hideLoading: false,
           hideDownloadButton: true,
