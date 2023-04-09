@@ -21,7 +21,9 @@
     "api-reference": {
         "title": "API Reference",
         "type": "page",
-        "href": "/apiReference"
+        "theme": {
+            "layout": "raw"
+        }
     },
     "login": {
         "title": "Login ↗",
