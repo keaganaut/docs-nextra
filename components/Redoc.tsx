@@ -6,15 +6,23 @@ export const Redoc = (props) => {
       <RedocStandalone
         spec={props.spec}
         options={{
+          nativeScrollbars: false,
+          disableSearch: true,
           hideLoading: true,
+          hideDownloadButton: true,
+          hideHostname: true,
+          hideSchemaPattern: false,
+          pathInMiddlePanel: true,
           theme: {
             colors: {
+              error: {main: "#e25353"},
+              success:{main: "#209661"},
+              gray:{},
               primary: { main: "rgb(23, 24, 28)" },
-              http: { get: "#209661", post: "#0f8cc6", patch: "#d74cb6" },
+              http: { get: "#209661", post: "#0f8cc6", patch: "#d74cb6",delete: "#e25353"},
               responses: {
-                error: {},
+                error: {tabTextColor:"#e25353"}, success:{tabTextColor:"#209661"},
               },
-
               text: {
                 primary: "#d1d1d1",
                 secondary: "rgba(255, 255, 255, 0.32)",
