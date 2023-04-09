@@ -67,18 +67,3 @@ export const Redoc = (props) => {
     </main>
   );
 };
-
-// export async function getStaticProps() {
-//   const res = await fetch("https://api.dev.y42.dev/gateway/openapi.json");
-//   const spec = await res.json();
-
-//   // fallback to read openapispec from filesystem
-//   // const filePath = path.join(process.cwd(), "./redoc/y42_openapi.json");
-//   // const jsonData = await fsPromises.readFile(filePath);
-//   // const objectData = JSON.parse(jsonData.toString());
-
-//   return {
-//     props: { openApiSpec: spec },
-//     revalidate: 3600,
-//   };
-// }
