@@ -30,5 +30,11 @@
         "type": "page",
         "href": "https://app.prod.y42.dev",
         "newWindow": true
+    },
+    "help-widget": {
+        "title": "Help widget scribehow",
+        "theme": {
+            "layout": "full"
+        }
     }
 }
