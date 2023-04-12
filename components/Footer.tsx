@@ -1,28 +1,28 @@
-import { LinkedInIcon, SlackBwIcon, YoutubeIcon } from "../icons/third-party";
-import Y42Logo from "../logos/Y42Logo";
-import { Status } from "./Status";
+import { StatusBadge } from "./StatusBadge";
+import Y42Logo from "./Y42Logo";
+import { LinkedInIcon, SlackBwIcon, YoutubeIcon } from "./icons/third-party";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col max-w-[90rem] mx-auto px-6 py-8 border-t border-gray-1200 dark:border-gray-300">
+    <footer className="mx-auto flex max-w-[90rem] flex-col border-t border-gray-1200 px-6 py-8 dark:border-gray-300">
       <div className="flex flex-row flex-wrap justify-between">
-        <div className="flex flex-row lg:flex-col lg:w-auto w-full justify-between lg:items-start mr-auto mb-8 lg:mb-0">
+        <div className="mr-auto mb-8 flex w-full flex-row justify-between lg:mb-0 lg:w-auto lg:flex-col lg:items-start">
           <div className="flex flex-row items-center">
             <Y42Logo height={16} />
-            <div className="flex flex-row space-x-5 items-center ml-12">
+            <div className="ml-12 flex flex-row items-center space-x-5">
               <a href="/" className="">
-                <SlackBwIcon className="h-5 w-5  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
+                <SlackBwIcon className="h-5 w-5  fill-secondary invert transition hover:fill-primary dark:invert-0" />
               </a>
               <a href="/" className="">
-                <LinkedInIcon className="h-5 w-5  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
+                <LinkedInIcon className="h-5 w-5  fill-secondary invert transition hover:fill-primary dark:invert-0" />
               </a>
               <a href="/" className="">
-                <YoutubeIcon className="h-6 w-6  fill-secondary invert dark:invert-0 hover:fill-primary transition" />
+                <YoutubeIcon className="h-6 w-6  fill-secondary invert transition hover:fill-primary dark:invert-0" />
               </a>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-24 gap-y-8 mt-8 lg:mt-0">
+        <div className="mt-8 grid grid-cols-2 gap-x-24 gap-y-8 md:grid-cols-4 lg:mt-0">
           <div className="">
             <h6 className="text-sm text-primary invert dark:invert-0">
               Product
@@ -98,14 +98,14 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <section className="flex flex-col lg:flex-row flex-wrap justify-between items-center lg:items-baseline mt-16">
-        <div className="text-sm text-secondary invert dark:invert-0 order-last lg:order-1 mt-4">
+      <section className="mt-16 flex flex-col flex-wrap items-center justify-between lg:flex-row lg:items-baseline">
+        <div className="order-last mt-4 text-sm text-secondary invert dark:invert-0 lg:order-1">
           © 2023 Y42. All rights reserved
         </div>
-        <div className="order-first lg:order-2 mb-4">
-          <Status />
+        <div className="order-first mb-4 lg:order-2">
+          <StatusBadge />
         </div>
-        <div className="text-sm text-secondary invert dark:invert-0 space-x-8 lg:order-last">
+        <div className="space-x-8 text-sm text-secondary invert dark:invert-0 lg:order-last">
           <a href="/">Imprint</a>
           <a href="/">Privacy policy</a>
           <a href="/">Terms of service</a>
