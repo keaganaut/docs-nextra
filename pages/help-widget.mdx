@@ -1,3 +1,21 @@
 import { HelpWidget } from "components/HelpWidget";
 
 <HelpWidget />
+
+export async function getStaticProps() {
+
+const res = await fetch('https://.../posts')
+const posts = await res.json()
+
+// By returning { props: { posts } }, the Blog component
+// will receive `posts` as a prop at build time
+return {
+props: {
+guides,
+},
+}
+}
+
+export default Blo;
+
+g
