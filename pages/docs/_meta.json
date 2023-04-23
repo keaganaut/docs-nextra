@@ -30,5 +30,11 @@
     "components": {
         "title": "Components",
         "display": "hidden"
+    },
+    "duckdb": {
+        "title": "DuckDB",
+        "theme": {
+            "layout": "full"
+        }
     }
 }

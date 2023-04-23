@@ -10,6 +10,7 @@
 	"dependencies": {
 		"@code-hike/mdx": "^0.8.0",
 		"@duckdb/duckdb-wasm": "^1.25.0",
+		"@monaco-editor/react": "^4.5.0",
 		"@react-three/drei": "^9.56.28",
 		"@react-three/fiber": "^8.11.5",
 		"@vercel/analytics": "^0.1.8",
