@@ -2,6 +2,7 @@ import * as duckdb from "@duckdb/duckdb-wasm";
 import Editor from "@monaco-editor/react";
 import { useEffect, useRef, useState } from "react";
 
+//TODO: debug on build
 //TODO: error handling for invalid queries
 //TODO: add data using parquet: https://github.com/duckdb/duckdb-wasm/tree/master/packages/duckdb-wasm
 //TODO: preview query table
